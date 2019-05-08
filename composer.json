@@ -1,0 +1,16 @@
+{
+    "name": "kranticnenad/slatkisi",
+    "type": "project",
+    "authors": [
+        {
+            "name": "KranticNenad",
+            "email": "kranticnenad@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\" : ""
+        }
+    }
+}
