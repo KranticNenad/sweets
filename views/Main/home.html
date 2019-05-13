@@ -1,0 +1,16 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+{% for slatkis in slatkisi %}
+<div>
+    <a href="/slatkis/{{slatkis.slatkis_id}}">
+        <div>
+            <img src="/assets/img/{{slatkis.slatkis_id}}/{{slatkis.slika}}" alt="slatkis" />
+        </div>
+    </a>
+    <div>
+        {{slatkis.naziv|escape}}
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

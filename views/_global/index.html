@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{% block title %} Početna {% endblock %}</title>
+    </head>
+    
+    <body>
+        <header>
+            <div class="banners">
+                <a href="/" class="banner">
+                    <img src="/assets/img/banner-1.jpg" alt="Banner 1"/>
+                </a>
+            </div>
+            <nav id="main-menu">
+                <ul>
+                    <li><a href="/">Početna</a>
+                    <li><a href="/slatkisi">Slatkiši</a>
+                    <li><a href="/profil">profil</a>
+                    <li><a href="/kontakt">kontakt</a>
+                    <li><a href="/odjava">odjava</a>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            {% block main %}
+            {% endblock %}
+        </main>
+        <footer>
+            &copy; 2019 Nenad Krantić
+        </footer>
+    </body>
+</html>

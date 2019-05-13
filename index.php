@@ -1,35 +1,3 @@
-<!-- <!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Slatkiši - Početna</title>
-
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-
-    <script src='main.js'></script>
-</head>
-
-<body>
-    
-    <header>
-
-    </header>
-
-    <div id="main">
-
-        <div id="filter_sidebar">
-
-        </div>
-
-        <div id="articles">
-
-        </div>
-
-    </div> -->
-
     <?php
     require_once('vendor/autoload.php');
     require_once('Configuration.php');
@@ -59,27 +27,16 @@
     $route = $router->find($httpMethod, $url);
     $arguments = $route->extractArguments($url);
 
-/*     print_r($route);
-    echo "<br/>";
-    print_r($arguments);
-    exit; */
-
     $fullControllerName = '\\App\\Controllers\\'.$route->getController().'Controller';
     $controller = new $fullControllerName($databaseConnection);
     call_user_func_array([$controller, $route->getMethod()],$arguments);
 
     $data = $controller->getData();
 
-    foreach($data as $name => $value){
-        $$name = $value;
-    }
-
-    require_once 'views/'. $route->getController() .'/'. $route->getMethod() .'.php';
-    ?>
-<!-- 
-    <footer>
-
-    </footer>
-</body>
-
-</html> -->
+    $loader = new Twig_Loader_Filesystem("./views");
+    $twig = new Twig_Environment($loader, [
+        "cache" => "./twig-cache",
+        "auto_reload" => true //REMOVE THIS AFTER DEV
+    ]);
+    echo $twig->render($route->getController() .'/'. $route->getMethod() . '.html',$data);
+    
