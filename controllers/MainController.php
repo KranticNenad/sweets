@@ -1,21 +1,16 @@
 <?php
     namespace App\Controllers;
 
-    use App\Core\DatabaseConnection;
     use App\Models\SlatkisModel;
 
-    class MainController{
+    class MainController extends \App\Core\Controller {
 
-        private $dbc;
-
-        public function __construct(DatabaseConnection &$dbc)
-        {
-            $this->dbc = $dbc;
-        }
-
-        public function home(){
-            $slatkisModel = new SlatkisModel($this->dbc);
+        public function home() {
+            $slatkisModel = new SlatkisModel($this->getDatabaseConnection());
             $slatkisi = $slatkisModel->getAll();
+
+            $this->set('slatkisi',$slatkisi);
+
         }
 
     }
