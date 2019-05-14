@@ -1,13 +1,14 @@
 {% extends "_global/index.html" %}
 
-{% block title%}{{slatkis.naziv | title}}{% endblock %}
+{% block title%}{{slatkis.naziv | title}} - Edit{% endblock %}
 
 {% block main %}
 
-<div class="slatkis-show">
+<div>
     <div>
         {% for slika in slike %}
-        <img src="/assets/img/{{slatkis.slatkis_id}}/{{slika.naziv}}" alt="slatkis" />
+        <img src="/assets/img/{{slatkis.slatkis_id}}/{{slika.naziv}}"
+            alt="slatkis" />
         {% endfor %}
     </div>
     <div>

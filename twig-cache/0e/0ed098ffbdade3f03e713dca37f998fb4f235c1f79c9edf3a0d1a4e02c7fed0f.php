@@ -52,7 +52,7 @@ class __TwigTemplate_61473f7c8be69ab71304d159d150d0df4a303ecda48ec6598f685e4291e
     {
         // line 6
         echo "
-<div>
+<div class=\"slatkis-show\">
     <div>
         ";
         // line 9
@@ -64,25 +64,24 @@ class __TwigTemplate_61473f7c8be69ab71304d159d150d0df4a303ecda48ec6598f685e4291e
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["slatkis"] ?? null), "slatkis_id", [], "any", false, false, false, 10), "html", null, true);
             echo "/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slika"], "naziv", [], "any", false, false, false, 10), "html", null, true);
-            echo "\"
-            alt=\"slatkis\" />
+            echo "\" alt=\"slatkis\" />
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['slika'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 13
+        // line 12
         echo "    </div>
     <div>
         ";
-        // line 15
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["slatkis"] ?? null), "naziv", [], "any", false, false, false, 15));
+        // line 14
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["slatkis"] ?? null), "naziv", [], "any", false, false, false, 14));
         echo "
     </div>
     <div>
         ";
-        // line 18
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["slatkis"] ?? null), "vrsta", [], "any", false, false, false, 18));
+        // line 17
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["slatkis"] ?? null), "vrsta", [], "any", false, false, false, 17));
         echo "
     </div>
 </div>
@@ -101,11 +100,11 @@ class __TwigTemplate_61473f7c8be69ab71304d159d150d0df4a303ecda48ec6598f685e4291e
 
     public function getDebugInfo()
     {
-        return array (  85 => 18,  79 => 15,  75 => 13,  63 => 10,  59 => 9,  54 => 6,  51 => 5,  45 => 3,  35 => 1,);
+        return array (  84 => 17,  78 => 14,  74 => 12,  63 => 10,  59 => 9,  54 => 6,  51 => 5,  45 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "Slatkis/show.html", "D:\\xampp\\htdocs\\views\\Slatkis\\show.html");
+        return new Source("", "Slatkis/show.html", "C:\\xampp\\htdocs\\views\\Slatkis\\show.html");
     }
 }

@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+    padding:0px;
+    margin:0px;    
+}
+
+body{
+    margin: 0px auto;
+    width: 900px;
+}
+
+.site-header{
+    display:grid;
+    grid-template-areas: "banner social"
+                         "menu menu"
+                         "filter filter";
+}
+
+.banners{
+    grid-area: banner;
+    background-color: #00ccff;
+}
+
+.social-icons{
+    grid-area: social;
+    text-align: right;
+}
+
+.social-icons > a{
+    width: 15px;
+    height: 15px;
+    margin: 0px 10px;
+}
+
+#main-menu{
+    grid-area: menu;
+    margin: 10px 0px;
+}
+
+#main-menu > ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+#main-menu > ul > li{
+    flex-grow: 1;
+    text-align: center;
+}
+
+#main-menu > ul > li > a{
+    display: block;
+    padding: 10px 0px;
+}
+
+#main-menu > ul > li :hover{
+    background: rgba(200,200,200,0.3);
+}
+
+.filters{
+    grid-area: filter;
+    margin: 10px 0px;
+}
+
+.filters > form{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.filters > form > *{
+    flex-grow: 1;
+}
+
+.slatkisi{
+    display:flex;
+    flex-direction: row;
+    align-content: stretch;
+    flex-wrap: wrap;
+}
+
+.slatkis{
+    width: 33%;
+    text-align:center;
+    padding: 10px;
+    border: 1px solid #9bcfcf;
+    background-color: rgba(145, 210, 226, 0.2);
+}
+
+.slatkis:hover{
+    border: 1px solid #9bcfcf;
+    background-color: rgba(145, 210, 226, 0.6);
+}
+
+.slatkis > a{
+    display: block;
+    text-decoration: none;
+    color: #000000;
+}
+
+#slatkis-image{
+    width: 100%;
+}
+
+.site-footer{
+    margin-top: 40px;
+    text-align: center;
+}

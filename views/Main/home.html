@@ -1,16 +1,45 @@
 {% extends "_global/index.html" %}
 
 {% block main %}
-{% for slatkis in slatkisi %}
-<div>
-    <a href="/slatkis/{{slatkis.slatkis_id}}">
-        <div>
-            <img src="/assets/img/{{slatkis.slatkis_id}}/{{slatkis.slika}}" alt="slatkis" />
-        </div>
-    </a>
-    <div>
-        {{slatkis.naziv|escape}}
-    </div>
+<div class="filters">
+        <form method="POST" action="/filter">
+            <input type="number" name="min-price" placeholder="Cena od"/>
+            <input type="number" name="max-price" placeholder="Cena do"/>
+            <select name="vrsta">
+                <option selected value="0">Vrsta</option>
+                {% for vrsta in vrste %}
+                <option value="{{vrsta.vrsta_id}}">{{vrsta.naziv}}</option>
+                {% endfor %}
+            </select>
+            <select name="boja">
+                    <option selected value="0">Boja</option>
+                    {% for boja in boje %}
+                    <option value="{{boja.boja_id}}">{{boja.naziv}}</option>
+                    {% endfor %}
+            </select>
+            <select name="sastojak">
+                    <option selected value="0">Glavni Sastojak</option>
+                    {% for sastojak in sastojci %}
+                    <option value="{{sastojak.sastojak_id}}">{{sastojak.naziv}}</option>
+                    {% endfor %}
+            </select>
+            <button type="submit">Pretraži</button>
+        </form>
 </div>
-{% endfor %}
+<div class="slatkisi">
+        {% for slatkis in slatkisi %}
+        <div class="slatkis">
+            <a href="/slatkis/{{slatkis.slatkis_id}}">
+            <div>
+                {% for slika in slike if (slika.is_primarna and slatkis.slatkis_id == slika.slatkis_id)%}
+                <img id="slatkis-image" src="/assets/img/{{slatkis.slatkis_id}}/{{slika.naziv}}" alt="{{slatkis.naziv}} slika" />
+                {% endfor %}
+            </div>
+            <div>
+                {{slatkis.naziv | escape | title}}
+            </div>
+            </a>
+        </div>
+        {% endfor %}
+</div>
 {% endblock %}
