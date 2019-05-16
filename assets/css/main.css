@@ -7,6 +7,11 @@
 body{
     margin: 0px auto;
     width: 900px;
+    /* background-image: url("../img/background.jpg"); */
+}
+
+.main-wrapper{
+    background: #ffffff;
 }
 
 .site-header{
@@ -85,6 +90,7 @@ body{
     width: 33%;
     text-align:center;
     padding: 10px;
+    border-radius: 5px;
     border: 1px solid #9bcfcf;
     background-color: rgba(145, 210, 226, 0.2);
 }
@@ -107,4 +113,9 @@ body{
 .site-footer{
     margin-top: 40px;
     text-align: center;
+}
+
+#carousel-slatkisi{
+    width:30vh;
+    background-color: rgba(145, 210, 226, 0.4);
 }

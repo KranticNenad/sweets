@@ -4,17 +4,35 @@
 
 {% block main %}
 
-<div class="slatkis-show">
-    <div>
-        {% for slika in slike %}
-        <img src="/assets/img/{{slatkis.slatkis_id}}/{{slika.naziv}}" alt="slatkis" />
-        {% endfor %}
+    <div class="slatkis-show">
+        <div id="carousel-slatkisi" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                    {% for slika in slike %}
+                    {% if loop.first %}
+                        <div class="carousel-item active">
+                    {% else %}
+                        <div class="carousel-item">
+                    {% endif %}
+                            <img src="/assets/img/{{slatkis.slatkis_id}}/{{slika.naziv}}" class="d-block w-100" alt="slatkis" />
+                        </div>
+                    {% endfor %}
+            </div>
+
+            <a class="carousel-control-prev" href="#carousel-slatkisi" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+
+            <a class="carousel-control-next" href="#carousel-slatkisi" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <div>
+            {{slatkis.naziv | escape}}
+        </div>
+        <div>
+            {{slatkis.vrsta | escape}}
+        </div>
     </div>
-    <div>
-        {{slatkis.naziv | escape}}
-    </div>
-    <div>
-        {{slatkis.vrsta | escape}}
-    </div>
-</div>
 {% endblock %}

@@ -22,47 +22,21 @@
             $this->set('slike', $slike);
 
         }
-
-        public function edit ($id) {
+        
+        //have to get data from POST request somehow, also need to get images
+        public function edit ($id, $data) {
             $slatkisModel = new SlatkisModel($this->getDatabaseConnection());
-            $slatkis = $slatkisModel->getById($id);
-
-            if (!$slatkis){
-                header('Location: /');
-                exit;
-            }
-
-            $this->set('slatkis',$slatkis);
-
-            $slikaModel = new SlikaModel($this->getDatabaseConnection());
-            $slike = $slikaModel->getAllBySlatkisId($id);
-
-            $this->set('slike', $slike);
+            $slatkis = $slatkisModel->editById($id, $data);
         }
 
         public function delete ($id) {
             $slatkisModel = new SlatkisModel($this->getDatabaseConnection());
-            $slatkis = $slatkisModel->getById($id);
-
-            if (!$slatkis){
-                header('Location: /');
-                exit;
-            }
-
-            $this->set('slatkis',$slatkis);
-
-            $slikaModel = new SlikaModel($this->getDatabaseConnection());
-            $slike = $slikaModel->getAllBySlatkisId($id);
-
-            $this->set('slike', $slike);
+            $slatkis = $slatkisModel->deleteById($id);
         }
 
-        public function add (){
+        //have to get data from POST request somehow, also need to get images
+        public function add ($data){
             $slatkisModel = new SlatkisModel($this->getDatabaseConnection());
-            $slatkisModel->add(
-                [
-                    
-                ]
-            );
+            $slatkisModel->add($data);
         }
     }

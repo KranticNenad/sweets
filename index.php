@@ -2,6 +2,8 @@
     require_once('vendor/autoload.php');
     require_once('Configuration.php');
 
+    ob_start();
+
     use App\Core\DatabaseConfig;
     use App\Core\DatabaseConnection;
     use App\Core\Router;
@@ -32,6 +34,14 @@
     call_user_func_array([$controller, $route->getMethod()],$arguments);
 
     $data = $controller->getData();
+
+    if ($controller instanceof \App\Core\ApiController){
+        ob_clean();
+        header('Content-type: application/json; charset=utf-8');
+        header('Access-Control-Allow-Origin: *');
+        echo json_encode($data);
+        exit;
+    }
 
     $loader = new Twig_Loader_Filesystem("./views");
     $twig = new Twig_Environment($loader, [
