@@ -6,6 +6,7 @@
     class Controller {
         
         private $dbc;
+        private $session;
         private $data = [];
 
         final public function __construct(DatabaseConnection &$dbc)
@@ -15,6 +16,14 @@
 
         final public function &getDatabaseConnection():DatabaseConnection{
             return $this->dbc;
+        }
+
+        final public function &getSession (): Session\Session{
+            return $this->session;
+        }
+
+        final public function setSession (Session\Session &$session){
+            $this->session = $session;
         }
 
         final protected function set (string $name, $value):bool{

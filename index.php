@@ -31,7 +31,17 @@
 
     $fullControllerName = '\\App\\Controllers\\'.$route->getController().'Controller';
     $controller = new $fullControllerName($databaseConnection);
+
+    $sessionStorageClassName = Configuration::SESSION_STORAGE;
+    $sessionStorageConstructorArguments = Configuration::SESSION_STORAGE_DATA;
+    $sessionStorage = new $sessionStorageClassName(...$sessionStorageConstructorArguments);
+
+    $session = new App\Core\Session\Session($sessionStorage, Configuration::SESSION_LIFETIME);
+    $controller->setSession($session);
+    $controller->getSession()->reload();
+
     call_user_func_array([$controller, $route->getMethod()],$arguments);
+    $controller->getSession()->save();
 
     $data = $controller->getData();
 

@@ -56,7 +56,7 @@ class __TwigTemplate_9aacea70a7e2034ec04142999f3097aa96572b8a6f865700ed7fe8f9305
             <header class=\"site-header\">
                 <div class=\"banners\">
                     <a href=\"/\" class=\"banner\">
-                        <img src=\"/assets/img/banner-1.jpg\" alt=\"Banner 1\"/>
+                        <img src=\"/assets/img/banner-1.png\" alt=\"Banner 1\"/>
                     </a>
                 </div>
                 <div class=\"social-icons\">

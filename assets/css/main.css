@@ -8,6 +8,7 @@ body{
     margin: 0px auto;
     width: 900px;
     /* background-image: url("../img/background.jpg"); */
+    background: rgba(255, 241, 248, 0.8);
 }
 
 .main-wrapper{
@@ -23,7 +24,6 @@ body{
 
 .banners{
     grid-area: banner;
-    background-color: #00ccff;
 }
 
 .social-icons{
@@ -87,7 +87,7 @@ body{
 }
 
 .slatkis{
-    width: 33%;
+    width: 33.33%;
     text-align:center;
     padding: 10px;
     border-radius: 5px;
