@@ -72,14 +72,15 @@ class __TwigTemplate_9aacea70a7e2034ec04142999f3097aa96572b8a6f865700ed7fe8f9305
                         <li><a href=\"/onama\">O nama</a>
                         <li><a href=\"/kontakt\">Kontakt</a>
                         <li><a href=\"/korpa\">Korpa</a>
+                        <li><a href=\"/slatkis/add\">Dodaj</a>
                     </ul>
                 </nav>
             </header>
             <main>
                 ";
-        // line 40
+        // line 41
         $this->displayBlock('main', $context, $blocks);
-        // line 42
+        // line 43
         echo "            </main>
             <footer class=\"site-footer\">
                 &copy; 2019 Nenad Krantić
@@ -95,10 +96,10 @@ class __TwigTemplate_9aacea70a7e2034ec04142999f3097aa96572b8a6f865700ed7fe8f9305
         echo " Početna ";
     }
 
-    // line 40
+    // line 41
     public function block_main($context, array $blocks = [])
     {
-        // line 41
+        // line 42
         echo "                ";
     }
 
@@ -109,7 +110,7 @@ class __TwigTemplate_9aacea70a7e2034ec04142999f3097aa96572b8a6f865700ed7fe8f9305
 
     public function getDebugInfo()
     {
-        return array (  102 => 41,  99 => 40,  93 => 12,  83 => 42,  81 => 40,  50 => 12,  37 => 1,);
+        return array (  103 => 42,  100 => 41,  94 => 12,  84 => 43,  82 => 41,  50 => 12,  37 => 1,);
     }
 
     public function getSourceContext()

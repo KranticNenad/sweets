@@ -1,21 +1,10 @@
 {% extends "_global/index.html" %}
 
-{% block title%}{{slatkis.naziv | title}} - Delete{% endblock %}
+{% block title%}Slatkiš - Obrisan{% endblock %}
 
 {% block main %}
 
 <div>
-    <div>
-        {% for slika in slike %}
-        <img src="/assets/img/{{slatkis.slatkis_id}}/{{slika.naziv}}"
-            alt="slatkis" />
-        {% endfor %}
-    </div>
-    <div>
-        {{slatkis.naziv | escape}}
-    </div>
-    <div>
-        {{slatkis.vrsta | escape}}
-    </div>
+    <p>Slatkiš je uspešno obrisan!</p>
 </div>
 {% endblock %}

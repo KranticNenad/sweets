@@ -29,10 +29,32 @@
             </a>
         </div>
         <div>
-            {{slatkis.naziv | escape}}
+            Naziv: {{slatkis.naziv | escape}}
         </div>
         <div>
-            {{slatkis.vrsta | escape}}
+            Cena po {{slatkis.jedinica_mere | escape}}u: {{slatkis.cena | escape}} RSD
+        </div>
+        <div>
+            Vrsta: 
+            {% for vrsta in vrste if (slatkis.vrsta_id == vrsta.vrsta_id) %}
+            {{vrsta.naziv | escape}}
+            {% endfor %}
+        </div>
+        <div>
+            Država: 
+            {% for drzava in drzave if (slatkis.drzava_id == drzava.drzava_id) %}
+            {{drzava.naziv | escape}}
+            {% endfor %}
+        </div>
+        <div>
+            Boja: 
+            {% for boja in boje if (slatkis.boja_id == boja.boja_id) %}
+            {{boja.naziv | escape}}
+            {% endfor %}
+        </div>
+        <div>
+            <a href="{{slatkis.slatkis_id}}/edit">Izmeni</a>
+            <a href="{{slatkis.slatkis_id}}/delete">Izbrisi</a>
         </div>
     </div>
 {% endblock %}

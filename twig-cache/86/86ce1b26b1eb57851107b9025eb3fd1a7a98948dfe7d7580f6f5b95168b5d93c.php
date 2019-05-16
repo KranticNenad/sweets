@@ -44,8 +44,7 @@ class __TwigTemplate_7732a95b3804b439e74fd4290b81b2f552d2ffe00fc9951404becc31bfb
     // line 3
     public function block_title($context, array $blocks = [])
     {
-        echo twig_escape_filter($this->env, twig_title_string_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["slatkis"] ?? null), "naziv", [], "any", false, false, false, 3)), "html", null, true);
-        echo " - Delete";
+        echo "Slatkiš - Obrisan";
     }
 
     // line 5
@@ -54,38 +53,7 @@ class __TwigTemplate_7732a95b3804b439e74fd4290b81b2f552d2ffe00fc9951404becc31bfb
         // line 6
         echo "
 <div>
-    <div>
-        ";
-        // line 9
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(($context["slike"] ?? null));
-        foreach ($context['_seq'] as $context["_key"] => $context["slika"]) {
-            // line 10
-            echo "        <img src=\"/assets/img/";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["slatkis"] ?? null), "slatkis_id", [], "any", false, false, false, 10), "html", null, true);
-            echo "/";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slika"], "naziv", [], "any", false, false, false, 10), "html", null, true);
-            echo "\"
-            alt=\"slatkis\" />
-        ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['slika'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 13
-        echo "    </div>
-    <div>
-        ";
-        // line 15
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["slatkis"] ?? null), "naziv", [], "any", false, false, false, 15));
-        echo "
-    </div>
-    <div>
-        ";
-        // line 18
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["slatkis"] ?? null), "vrsta", [], "any", false, false, false, 18));
-        echo "
-    </div>
+    <p>Slatkiš je uspešno obrisan!</p>
 </div>
 ";
     }
@@ -102,7 +70,7 @@ class __TwigTemplate_7732a95b3804b439e74fd4290b81b2f552d2ffe00fc9951404becc31bfb
 
     public function getDebugInfo()
     {
-        return array (  86 => 18,  80 => 15,  76 => 13,  64 => 10,  60 => 9,  55 => 6,  52 => 5,  45 => 3,  35 => 1,);
+        return array (  54 => 6,  51 => 5,  45 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
