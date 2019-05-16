@@ -147,7 +147,7 @@ class __TwigTemplate_97a516e72fd948627a713f061d9b87d31b3928961b9bdce4b82f3e0ac34
                 // line 37
                 echo "                <img alt=\"";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slatkis"], "naziv", [], "any", false, false, false, 37), "html", null, true);
-                echo " slika\">
+                echo " slika\"/>
                 ";
             }
             $_parent = $context['_parent'];

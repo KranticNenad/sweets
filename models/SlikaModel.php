@@ -3,14 +3,17 @@ namespace App\Models;
 
 use App\Core\Model;
 use App\Core\Field;
+use App\Validators\NumberValidator;
+use App\Validators\TinyIntValidator;
+use App\Validators\ImageNameValidator;
 
 class SlikaModel extends Model
 {
     protected function getFields (): array{
         return [
-            'naziv'         => Field::readOnlyImageName(),
-            'is_primarna'   => Field::editableTinyInt(),
-            'slatkis_id'    => Field::readOnlyUnsignedInteger(15)
+            'naziv'         => new Field((new ImageNameValidator())->setExtensions(['png', 'jpg', 'jpeg'])),
+            'is_primarna'   => new Field((new TinyIntValidator())),
+            'slatkis_id'    => new Field((new NumberValidator())->setIntegerLength(15))
         ];
     }
 

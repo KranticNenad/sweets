@@ -3,16 +3,17 @@ namespace App\Models;
 
 use App\Core\Model;
 use App\Core\Field;
+use App\Validators\NumberValidator;
 
 class StavkakModel extends Model
 {
     protected function getFields (): array{
         return [
-            'stavka_id'     => Field::readOnlyUnsignedInteger(15),
-            'kolicina'      => Field::editableDecimal(7,2),
-            'cena'          => Field::editableDecimal(9,2),
-            'slatkis_id'    => Field::editableUnsignedInteger(15),
-            'porudzbina_id' => Field::editableUnsignedInteger(15)
+            'stavka_id'     => new Field((new NumberValidator())->setIntegerLength(15), false),
+            'kolicina'      => new Field((new NumberValidator())->setIntegerLength(7)->setDecimal()->setMaxDecimalDigits(2)),
+            'cena'          => new Field((new NumberValidator())->setIntegerLength(9)->setDecimal()->setMaxDecimalDigits(2)),
+            'slatkis_id'    => new Field((new NumberValidator())->setIntegerLength(15)),
+            'porudzbina_id' => new Field((new NumberValidator())->setIntegerLength(15))
         ];
     }
 }
