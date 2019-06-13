@@ -75,6 +75,6 @@ class __TwigTemplate_7732a95b3804b439e74fd4290b81b2f552d2ffe00fc9951404becc31bfb
 
     public function getSourceContext()
     {
-        return new Source("", "Slatkis/delete.html", "D:\\xampp\\htdocs\\views\\Slatkis\\delete.html");
+        return new Source("", "Slatkis/delete.html", "C:\\xampp\\htdocs\\views\\Slatkis\\delete.html");
     }
 }

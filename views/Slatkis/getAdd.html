@@ -24,7 +24,7 @@
             </div>
             <div>
                     <label for="drzava_id">Drzava: </label>
-                    <select name="drzava_id">
+                    <select name="drzava_id" id="drzava_id">
                             {% for drzava in drzave%}
                             <option value="{{drzava.drzava_id}}">{{drzava.naziv | escape}}</option>
                             {% endfor %}
@@ -32,7 +32,7 @@
             </div>
             <div>
                     <label for="boja_id">Boja: </label>
-                    <select name="boja_id">
+                    <select name="boja_id" id="boja_id">
                             {% for boja in boje%}
                             <option value="{{boja.boja_id}}">{{boja.naziv | escape}}</option>
                             {% endfor %}
@@ -40,7 +40,7 @@
             </div>
             <div>
                     <label for="jedinica_mere">Jedinica mere: </label>
-                    <select name="jedinica_mere">
+                    <select name="jedinica_mere" id=jedinica_mere>
                             <option selected value="gram">gram</option>
                             <option value="komad">komad</option>
                     </select>

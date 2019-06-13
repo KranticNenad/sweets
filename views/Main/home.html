@@ -33,7 +33,7 @@
             <a href="/slatkis/{{slatkis.slatkis_id}}">
             <div>
                 {% for slika in slike if (slika.is_primarna and slatkis.slatkis_id == slika.slatkis_id)%}
-                <img id="slatkis-image" src="/assets/img/{{slatkis.slatkis_id}}/{{slika.naziv}}" alt="{{slatkis.naziv}} slika" />
+                <img class="slatkis-image" src="/assets/img/{{slatkis.slatkis_id}}/{{slika.naziv}}" alt="{{slatkis.naziv}} slika" />
                 {% else %}
                 <img alt="{{slatkis.naziv}} slika"/>
                 {% endfor %}

@@ -16,7 +16,7 @@
 
             if (strlen($this->sessionId) !== 32){
                 $this->sessionId = $this->generateSessionId();
-                setcookie('APPSESSION', $this->sessionId, time() + $this->sessionLife);
+                setcookie('APPSESSION', $this->sessionId, time() + $this->sessionLife, '/');
             }
         }
 
@@ -56,7 +56,7 @@
         public function save (){
             $jsonData = json_encode($this->sessionData);
             $this->sessionStorage->save($this->sessionId, $jsonData);
-            setcookie('APPSESSION', $this->sessionId, time() + $this->sessionLife);
+            setcookie('APPSESSION', $this->sessionId, time() + $this->sessionLife,'/');
         }
 
         public function reload(){
@@ -76,6 +76,6 @@
             $this->sessionStorage->delete($this->sessionId);
             $this->sessionId = $this->generateSessionId();
             $this->save();
-            setcookie('APPSESSION', $this->sessionId, time() + $this->sessionLife);
+            setcookie('APPSESSION', $this->sessionId, time() + $this->sessionLife, '/');
         }
     }

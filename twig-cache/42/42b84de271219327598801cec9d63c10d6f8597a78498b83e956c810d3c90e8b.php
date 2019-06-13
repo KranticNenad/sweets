@@ -115,6 +115,6 @@ class __TwigTemplate_9aacea70a7e2034ec04142999f3097aa96572b8a6f865700ed7fe8f9305
 
     public function getSourceContext()
     {
-        return new Source("", "_global/index.html", "D:\\xampp\\htdocs\\views\\_global\\index.html");
+        return new Source("", "_global/index.html", "C:\\xampp\\htdocs\\views\\_global\\index.html");
     }
 }

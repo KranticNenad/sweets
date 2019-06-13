@@ -109,7 +109,10 @@
         }
 
         public function delete ($id) {
+            $slikaModel = new SlikaModel($this->getDatabaseConnection());
             $slatkisModel = new SlatkisModel($this->getDatabaseConnection());
+            
+            $slikaModel->deleteAllBySlatkisId($id);
             $slatkisModel->deleteById($id);
         }
 

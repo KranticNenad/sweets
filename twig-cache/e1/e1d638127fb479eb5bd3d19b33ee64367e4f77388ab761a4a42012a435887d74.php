@@ -136,7 +136,7 @@ class __TwigTemplate_97a516e72fd948627a713f061d9b87d31b3928961b9bdce4b82f3e0ac34
             foreach ($context['_seq'] as $context["_key"] => $context["slika"]) {
                 if ((twig_get_attribute($this->env, $this->source, $context["slika"], "is_primarna", [], "any", false, false, false, 35) && (twig_get_attribute($this->env, $this->source, $context["slatkis"], "slatkis_id", [], "any", false, false, false, 35) == twig_get_attribute($this->env, $this->source, $context["slika"], "slatkis_id", [], "any", false, false, false, 35)))) {
                     // line 36
-                    echo "                <img id=\"slatkis-image\" src=\"/assets/img/";
+                    echo "                <img class=\"slatkis-image\" src=\"/assets/img/";
                     echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slatkis"], "slatkis_id", [], "any", false, false, false, 36), "html", null, true);
                     echo "/";
                     echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slika"], "naziv", [], "any", false, false, false, 36), "html", null, true);
@@ -194,6 +194,6 @@ class __TwigTemplate_97a516e72fd948627a713f061d9b87d31b3928961b9bdce4b82f3e0ac34
 
     public function getSourceContext()
     {
-        return new Source("", "Main/home.html", "D:\\xampp\\htdocs\\views\\Main\\home.html");
+        return new Source("", "Main/home.html", "C:\\xampp\\htdocs\\views\\Main\\home.html");
     }
 }

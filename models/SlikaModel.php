@@ -26,4 +26,10 @@ class SlikaModel extends Model
     {
         return $this->getAllByFieldName('slatkis_id', $slatkisId);
     }
+
+    public function deleteAllBySlatkisId (int $slatkisId){
+        $query = "DELETE FROM slika WHERE slatkis_id = ?";
+        $prep = $this->getConnection()->prepare($query);
+        $prep->execute([$slatkisId]);
+    }
 }
