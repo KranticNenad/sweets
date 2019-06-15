@@ -86,7 +86,7 @@ class __TwigTemplate_31b4cf233f2027d7bf9ac74fadaa3966389dbcfb1526ac94bb208081146
             </div>
             <div>
                     <label for=\"drzava_id\">Drzava: </label>
-                    <select name=\"drzava_id\">
+                    <select name=\"drzava_id\" id=\"drzava_id\">
                             ";
         // line 28
         $context['_parent'] = $context;
@@ -108,7 +108,7 @@ class __TwigTemplate_31b4cf233f2027d7bf9ac74fadaa3966389dbcfb1526ac94bb208081146
             </div>
             <div>
                     <label for=\"boja_id\">Boja: </label>
-                    <select name=\"boja_id\">
+                    <select name=\"boja_id\" id=\"boja_id\">
                             ";
         // line 36
         $context['_parent'] = $context;
@@ -130,7 +130,7 @@ class __TwigTemplate_31b4cf233f2027d7bf9ac74fadaa3966389dbcfb1526ac94bb208081146
             </div>
             <div>
                     <label for=\"jedinica_mere\">Jedinica mere: </label>
-                    <select name=\"jedinica_mere\">
+                    <select name=\"jedinica_mere\" id=jedinica_mere>
                             <option selected value=\"gram\">gram</option>
                             <option value=\"komad\">komad</option>
                     </select>

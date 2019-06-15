@@ -64,7 +64,7 @@ class __TwigTemplate_2debfb4f4534147070448bc77bdcfa3c76d8f63c06aa984ebeb6b065312
             </div>
             <div>
                     <label for=\"cena\">Cena: </label>
-                    <input type=\"number\" id=\"cena\" min=\"1\" step=\"0.01\"name=\"cena\" value=\"";
+                    <input type=\"number\" id=\"cena\" min=\"1\" step=\"0.01\" name=\"cena\" value=\"";
         // line 15
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["slatkis"] ?? null), "cena", [], "any", false, false, false, 15));
         echo "\"/>
@@ -107,7 +107,7 @@ class __TwigTemplate_2debfb4f4534147070448bc77bdcfa3c76d8f63c06aa984ebeb6b065312
             </div>
             <div>
                     <label for=\"drzava_id\">Drzava: </label>
-                    <select name=\"drzava_id\">
+                    <select name=\"drzava_id\" id=\"drzava_id\">
                             ";
         // line 32
         $context['_parent'] = $context;
@@ -143,7 +143,7 @@ class __TwigTemplate_2debfb4f4534147070448bc77bdcfa3c76d8f63c06aa984ebeb6b065312
             </div>
             <div>
                     <label for=\"boja_id\">Boja: </label>
-                    <select name=\"boja_id\">
+                    <select name=\"boja_id\" id=\"boja_id\">
                             ";
         // line 44
         $context['_parent'] = $context;
@@ -179,7 +179,7 @@ class __TwigTemplate_2debfb4f4534147070448bc77bdcfa3c76d8f63c06aa984ebeb6b065312
             </div>
             <div>
                     <label for=\"jedinica_mere\">Jedinica mere: </label>
-                    <select name=\"jedinica_mere\">
+                    <select name=\"jedinica_mere\" id=\"jedinica_mere\">
                             ";
         // line 56
         if ((twig_get_attribute($this->env, $this->source, ($context["slatkis"] ?? null), "jedinica_mere", [], "any", false, false, false, 56) == "gram")) {

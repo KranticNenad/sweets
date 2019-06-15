@@ -37,10 +37,13 @@
 
             //$this->getSession()->put('test_key', 'test_value ' . rand (100, 999));
 
-            /* $staraVrednost = $this->getSession()->get('brojac', 0);
+            $staraVrednost1 = $this->getSession()->get('test_key', '/');
+            $this->set('podatak', $staraVrednost1);
+
+            /*$staraVrednost = $this->getSession()->get('brojac', 0);
             $novaVrednost = $staraVrednost + 1;
             $this->getSession()->put('brojac', $novaVrednost);
-            $this->set('podatak', $novaVrednost); */
+            $this->set('podatak', $novaVrednost);*/ 
         }
 
     }

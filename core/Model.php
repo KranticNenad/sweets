@@ -56,7 +56,7 @@
                 throw new \Exception("Invalid field name or value for " . $fieldName . " " . $value);
             }
             $tableName = $this->getTableName();
-            $query = "SELECT * FROM " . $tableName . " WHERE " . $fieldName . "_id = ?";
+            $query = "SELECT * FROM " . $tableName . " WHERE " . $fieldName . " = ?";
             $prep = $this->dbc->getConnection()->prepare($query);
             $res = $prep->execute([$value]);
             $object = NULL;
@@ -91,6 +91,16 @@
                 $objects = $prep->fetchAll(\PDO::FETCH_OBJ);
             }
             return $objects;
+        }
+
+        final public function deleteAllByFieldName (string $fieldName, $value){
+            if (!$this->isFieldValueValid($fieldName, $value)){
+                throw new \Exception("Invalid field name or value for " . $fieldName . " " . $value);
+            }
+            $tableName = $this->getTableName();
+            $query = "DELETE FROM " . $tableName . " WHERE " . $fieldName . " = ?";
+            $prep = $this->dbc->getConnection()->prepare($query);
+            $prep->execute([$value]);
         }
 
         final private function checkFieldList (array $data){

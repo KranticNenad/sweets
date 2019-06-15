@@ -32,9 +32,61 @@ body{
 }
 
 .social-icons > a{
-    width: 15px;
-    height: 15px;
-    margin: 0px 10px;
+    display: inline-flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    width: 3em;
+    height: 3em;
+    margin: 0px 0.25em;
+    background-color: rgb(0,0,0);
+    border-radius: 100%;
+}
+
+#linkedin-icon{
+    background-color: rgb(0, 123, 181);
+}
+
+#linkedin-icon:hover{
+    background-color: rgba(0, 124, 181, 0.7);
+}
+
+#facebook-icon{
+    background-color: rgb(59, 89, 152);
+}
+
+#facebook-icon:hover{
+    background-color: rgba(59, 89, 152, 0.7);
+}
+
+#twitter-icon{
+    background-color: rgb(85, 172, 238);
+}
+
+#twitter-icon:hover{
+    background-color: rgba(85, 172, 238, 0.7);
+}
+
+#googleplus-icon{
+    background-color: rgb(221, 75, 57);
+}
+
+#googleplus-icon:hover{
+    background-color: rgba(221, 75, 57, 0.7);
+}
+
+#youtube-icon{
+    background-color: rgb(255, 0, 0);
+}
+
+#youtube-icon:hover{
+    background-color: rgba(255, 0, 0, 0.7);
+}
+
+.social-icons > a > i {
+    font-size: 2em;
+    color: rgb(255,255,255);
+    
 }
 
 #main-menu{
