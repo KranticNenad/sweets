@@ -4,12 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="/assets/fontawesome-free-5.9.0-web/css/all.min.css" rel="stylesheet">
+        <link rel="shortcut icon" href="{{BASE}}assets/img/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="{{BASE}}assets/fontawesome-free-5.9.0-web/css/all.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{BASE}}assets/css/main.css">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="/assets/css/main.css">
         <title>{% block title %} Početna {% endblock %}</title>
     </head>
     
@@ -17,8 +18,8 @@
         <div class="main-wrapper">
             <header class="site-header">
                 <div class="banners">
-                    <a href="/" class="banner">
-                        <img src="/assets/img/banner-1.png" alt="Banner 1"/>
+                    <a href="{{BASE}}" class="banner">
+                        <img src="{{BASE}}assets/img/banner-1.png" alt="Banner 1"/>
                     </a>
                 </div>
                 <div class="social-icons">
@@ -30,11 +31,11 @@
                 </div>
                 <nav id="main-menu">
                     <ul>
-                        <li><a href="/">Početna</a>
-                        <li><a href="/onama">O nama</a>
-                        <li><a href="/kontakt">Kontakt</a>
-                        <li><a href="/korpa">Korpa</a>
-                        <li><a href="/slatkis/add">Dodaj</a>
+                        <li><a href="{{BASE}}">Početna</a>
+                        <li><a href="{{BASE}}onama">O nama</a>
+                        <li><a href="{{BASE}}kontakt">Kontakt</a>
+                        <li><a href="{{BASE}}korpa">Korpa</a>
+                        <li><a href="{{BASE}}slatkis/add">Dodaj</a>
                     </ul>
                 </nav>
             </header>
@@ -42,9 +43,15 @@
                 {% block main %}
                 {% endblock %}
             </main>
+            <div class="cart">
+                Korpa
+            </div>
             <footer class="site-footer">
                 &copy; 2019 Nenad Krantić
             </footer>
         </div>
+
+        <script>const BASE = '{{BASE}}';</script>
+        <script src="{{BASE}}assets/js/cart.js"></script>
     </body>
 </html>

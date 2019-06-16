@@ -7,7 +7,6 @@
 body{
     margin: 0px auto;
     width: 900px;
-    /* background-image: url("../img/background.jpg"); */
     background: rgba(241, 244, 255, 0.8);
 }
 
@@ -169,6 +168,19 @@ body{
 }
 
 #carousel-slatkisi{
-    width:30vh;
+    width: 30vh;
     background-color: rgba(145, 210, 226, 0.4);
+}
+
+.cart{
+    display: block;
+    position: fixed;
+    top: 50px;
+    right: 0px;
+    background: rgba(145, 210, 226, 0.6);
+    border-radius: 5px; 
+}
+
+.cart > a{
+    display: block;
 }

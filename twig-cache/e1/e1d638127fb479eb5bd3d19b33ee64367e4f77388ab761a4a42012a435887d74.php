@@ -111,62 +111,58 @@ class __TwigTemplate_97a516e72fd948627a713f061d9b87d31b3928961b9bdce4b82f3e0ac34
             <button type=\"submit\">Pretraži</button>
         </form>
 </div>
-<!-- <p>";
-        // line 29
-        echo twig_escape_filter($this->env, ($context["podatak"] ?? null), "html", null, true);
-        echo "</p> -->
-<p>";
-        // line 30
-        echo twig_escape_filter($this->env, ($context["podatak"] ?? null), "html", null, true);
-        echo "</p>
 <div class=\"slatkisi\">
         ";
-        // line 32
+        // line 30
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["slatkisi"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["slatkis"]) {
-            // line 33
+            // line 31
             echo "        <div class=\"slatkis\">
-            <a href=\"/slatkis/";
-            // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slatkis"], "slatkis_id", [], "any", false, false, false, 34), "html", null, true);
+            <a href=\"";
+            // line 32
+            echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+            echo "slatkis/";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slatkis"], "slatkis_id", [], "any", false, false, false, 32), "html", null, true);
             echo "\">
             <div>
                 ";
-            // line 36
+            // line 34
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(($context["slike"] ?? null));
             $context['_iterated'] = false;
             foreach ($context['_seq'] as $context["_key"] => $context["slika"]) {
-                if ((twig_get_attribute($this->env, $this->source, $context["slika"], "is_primarna", [], "any", false, false, false, 36) && (twig_get_attribute($this->env, $this->source, $context["slatkis"], "slatkis_id", [], "any", false, false, false, 36) == twig_get_attribute($this->env, $this->source, $context["slika"], "slatkis_id", [], "any", false, false, false, 36)))) {
-                    // line 37
-                    echo "                <img class=\"slatkis-image\" src=\"/assets/img/";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slatkis"], "slatkis_id", [], "any", false, false, false, 37), "html", null, true);
+                if ((twig_get_attribute($this->env, $this->source, $context["slika"], "is_primarna", [], "any", false, false, false, 34) && (twig_get_attribute($this->env, $this->source, $context["slatkis"], "slatkis_id", [], "any", false, false, false, 34) == twig_get_attribute($this->env, $this->source, $context["slika"], "slatkis_id", [], "any", false, false, false, 34)))) {
+                    // line 35
+                    echo "                <img class=\"slatkis-image\" src=\"";
+                    echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+                    echo "assets/img/";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slatkis"], "slatkis_id", [], "any", false, false, false, 35), "html", null, true);
                     echo "/";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slika"], "naziv", [], "any", false, false, false, 37), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slika"], "naziv", [], "any", false, false, false, 35), "html", null, true);
                     echo "\" alt=\"";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slatkis"], "naziv", [], "any", false, false, false, 37), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slatkis"], "naziv", [], "any", false, false, false, 35), "html", null, true);
                     echo " slika\" />
                 ";
                     $context['_iterated'] = true;
                 }
             }
             if (!$context['_iterated']) {
-                // line 39
+                // line 37
                 echo "                <img alt=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slatkis"], "naziv", [], "any", false, false, false, 39), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slatkis"], "naziv", [], "any", false, false, false, 37), "html", null, true);
                 echo " slika\"/>
                 ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['slika'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 41
+            // line 39
             echo "            </div>
             <div>
                 ";
-            // line 43
-            echo twig_escape_filter($this->env, twig_title_string_filter($this->env, twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slatkis"], "naziv", [], "any", false, false, false, 43))), "html", null, true);
+            // line 41
+            echo twig_escape_filter($this->env, twig_title_string_filter($this->env, twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slatkis"], "naziv", [], "any", false, false, false, 41))), "html", null, true);
             echo "
             </div>
             </a>
@@ -176,7 +172,7 @@ class __TwigTemplate_97a516e72fd948627a713f061d9b87d31b3928961b9bdce4b82f3e0ac34
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['slatkis'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 48
+        // line 46
         echo "</div>
 ";
     }
@@ -193,11 +189,11 @@ class __TwigTemplate_97a516e72fd948627a713f061d9b87d31b3928961b9bdce4b82f3e0ac34
 
     public function getDebugInfo()
     {
-        return array (  180 => 48,  169 => 43,  165 => 41,  156 => 39,  143 => 37,  137 => 36,  132 => 34,  129 => 33,  125 => 32,  120 => 30,  116 => 29,  110 => 25,  99 => 23,  95 => 22,  90 => 19,  79 => 17,  75 => 16,  70 => 13,  59 => 11,  55 => 10,  47 => 4,  44 => 3,  34 => 1,);
+        return array (  176 => 46,  165 => 41,  161 => 39,  152 => 37,  137 => 35,  131 => 34,  124 => 32,  121 => 31,  117 => 30,  110 => 25,  99 => 23,  95 => 22,  90 => 19,  79 => 17,  75 => 16,  70 => 13,  59 => 11,  55 => 10,  47 => 4,  44 => 3,  34 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "Main/home.html", "D:\\xampp\\htdocs\\views\\Main\\home.html");
+        return new Source("", "Main/home.html", "D:\\xampp\\htdocs\\test\\views\\Main\\home.html");
     }
 }

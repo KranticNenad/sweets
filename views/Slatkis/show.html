@@ -13,7 +13,7 @@
                     {% else %}
                         <div class="carousel-item">
                     {% endif %}
-                            <img src="/assets/img/{{slatkis.slatkis_id}}/{{slika.naziv}}" class="d-block w-100" alt="slatkis" />
+                            <img src="{{BASE}}assets/img/{{slatkis.slatkis_id}}/{{slika.naziv}}" class="d-block w-100" alt="slatkis" />
                         </div>
                     {% endfor %}
             </div>
@@ -55,6 +55,7 @@
         <div>
             <a href="{{slatkis.slatkis_id}}/edit">Izmeni</a>
             <a href="{{slatkis.slatkis_id}}/delete">Izbrisi</a>
+            <a href="#" onclick="addItem({{slatkis.slatkis_id}});">Dodaj u korpu</a>
         </div>
     </div>
 {% endblock %}

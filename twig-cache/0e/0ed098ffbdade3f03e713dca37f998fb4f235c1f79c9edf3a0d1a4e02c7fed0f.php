@@ -85,7 +85,9 @@ class __TwigTemplate_61473f7c8be69ab71304d159d150d0df4a303ecda48ec6598f685e4291e
                     ";
             }
             // line 16
-            echo "                            <img src=\"/assets/img/";
+            echo "                            <img src=\"";
+            echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+            echo "assets/img/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["slatkis"] ?? null), "slatkis_id", [], "any", false, false, false, 16), "html", null, true);
             echo "/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slika"], "naziv", [], "any", false, false, false, 16), "html", null, true);
@@ -200,6 +202,10 @@ class __TwigTemplate_61473f7c8be69ab71304d159d150d0df4a303ecda48ec6598f685e4291e
         // line 57
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["slatkis"] ?? null), "slatkis_id", [], "any", false, false, false, 57), "html", null, true);
         echo "/delete\">Izbrisi</a>
+            <a href=\"#\" onclick=\"addItem(";
+        // line 58
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["slatkis"] ?? null), "slatkis_id", [], "any", false, false, false, 58), "html", null, true);
+        echo ");\">Dodaj u korpu</a>
         </div>
     </div>
 ";
@@ -217,11 +223,11 @@ class __TwigTemplate_61473f7c8be69ab71304d159d150d0df4a303ecda48ec6598f685e4291e
 
     public function getDebugInfo()
     {
-        return array (  201 => 57,  197 => 56,  193 => 54,  183 => 52,  178 => 51,  173 => 48,  163 => 46,  158 => 45,  153 => 42,  143 => 40,  138 => 39,  129 => 35,  123 => 32,  108 => 19,  88 => 16,  84 => 14,  80 => 12,  77 => 11,  60 => 10,  54 => 6,  51 => 5,  45 => 3,  35 => 1,);
+        return array (  207 => 58,  203 => 57,  199 => 56,  195 => 54,  185 => 52,  180 => 51,  175 => 48,  165 => 46,  160 => 45,  155 => 42,  145 => 40,  140 => 39,  131 => 35,  125 => 32,  110 => 19,  88 => 16,  84 => 14,  80 => 12,  77 => 11,  60 => 10,  54 => 6,  51 => 5,  45 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "Slatkis/show.html", "C:\\xampp\\htdocs\\views\\Slatkis\\show.html");
+        return new Source("", "Slatkis/show.html", "D:\\xampp\\htdocs\\slatkisi\\views\\Slatkis\\show.html");
     }
 }

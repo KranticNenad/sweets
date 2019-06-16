@@ -1,16 +1,21 @@
 <?php
     namespace App\Core\Session;
 
-    final class Session {
+use App\Core\Fingerprint\FingerprintProvider;
+
+final class Session {
         private $sessionStorage;
         private $sessionData;
         private $sessionId;
         private $sessionLife;
+        private $fingerprintProvider;
 
         public function __construct(SessionStorage $sessionStorage, int $sessionLife = 1800){
             $this->sessionStorage = $sessionStorage;
             $this->sessionData = (object) [];
             $this->sessionLife = $sessionLife;
+            $this->fingerprintProvider = NULL;
+
             $this->sessionId = \filter_input(INPUT_COOKIE, "APPSESSION", FILTER_SANITIZE_STRING);
             $this->sessionId = \preg_replace('|[^A-Za-z0-9]|', '', $this->sessionId);
 
@@ -18,6 +23,10 @@
                 $this->sessionId = $this->generateSessionId();
                 setcookie('APPSESSION', $this->sessionId, time() + $this->sessionLife, '/');
             }
+        }
+
+        public function setFingerprintProvider (FingerprintProvider $fp){
+            $this->fingerprintProvider = $fp;
         }
 
         private function generateSessionId (): string{
@@ -54,9 +63,13 @@
         }
 
         public function save (){
+            $fingerprint = $this->fingerprintProvider->provideFingerprint();
+            $this->sessionData->__fingerprint = $fingerprint;
+
             $jsonData = \json_encode($this->sessionData);
             $this->sessionStorage->save($this->sessionId, $jsonData);
             setcookie('APPSESSION', $this->sessionId, time() + $this->sessionLife, '/');
+            
         }
 
         public function reload(){
@@ -69,6 +82,25 @@
             }
 
             $this->sessionData = $restoredData;
+
+            if ($this->fingerprintProvider === NULL){
+                return;
+            }
+
+            $savedFingerprint = $this->sessionData->__fingerprint ?? NULL;
+            if ($savedFingerprint === NULL){
+                return;
+            }
+
+            $currentFingerprint = $this->fingerprintProvider->provideFingerprint();
+
+            if ($currentFingerprint !== $savedFingerprint){
+                $this->clear();
+                $this->sessionStorage->delete($this->sessionId);
+                $this->sessionId = $this->generateSessionId();
+                $this->save();
+                setcookie('APPSESSION', $this->sessionId, time() + $this->sessionLife, '/');
+            }
         }
 
         public function regenerate(){

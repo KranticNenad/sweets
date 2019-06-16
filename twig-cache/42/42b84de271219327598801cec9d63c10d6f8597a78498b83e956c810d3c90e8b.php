@@ -40,14 +40,24 @@ class __TwigTemplate_9aacea70a7e2034ec04142999f3097aa96572b8a6f865700ed7fe8f9305
         <meta charset=\"UTF-8\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
         <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">
-        <link href=\"/assets/fontawesome-free-5.9.0-web/css/all.min.css\" rel=\"stylesheet\">
+        <link rel=\"shortcut icon\" href=\"";
+        // line 7
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "assets/img/favicon.ico\" type=\"image/x-icon\">
+        <link rel=\"stylesheet\" href=\"";
+        // line 8
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "assets/fontawesome-free-5.9.0-web/css/all.min.css\">
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+        <link rel=\"stylesheet\" href=\"";
+        // line 10
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "assets/css/main.css\">
         <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>
         <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
-        <link rel=\"stylesheet\" href=\"/assets/css/main.css\">
         <title>";
-        // line 13
+        // line 14
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
     </head>
@@ -56,8 +66,14 @@ class __TwigTemplate_9aacea70a7e2034ec04142999f3097aa96572b8a6f865700ed7fe8f9305
         <div class=\"main-wrapper\">
             <header class=\"site-header\">
                 <div class=\"banners\">
-                    <a href=\"/\" class=\"banner\">
-                        <img src=\"/assets/img/banner-1.png\" alt=\"Banner 1\"/>
+                    <a href=\"";
+        // line 21
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "\" class=\"banner\">
+                        <img src=\"";
+        // line 22
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "assets/img/banner-1.png\" alt=\"Banner 1\"/>
                     </a>
                 </div>
                 <div class=\"social-icons\">
@@ -69,38 +85,65 @@ class __TwigTemplate_9aacea70a7e2034ec04142999f3097aa96572b8a6f865700ed7fe8f9305
                 </div>
                 <nav id=\"main-menu\">
                     <ul>
-                        <li><a href=\"/\">Početna</a>
-                        <li><a href=\"/onama\">O nama</a>
-                        <li><a href=\"/kontakt\">Kontakt</a>
-                        <li><a href=\"/korpa\">Korpa</a>
-                        <li><a href=\"/slatkis/add\">Dodaj</a>
+                        <li><a href=\"";
+        // line 34
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "\">Početna</a>
+                        <li><a href=\"";
+        // line 35
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "onama\">O nama</a>
+                        <li><a href=\"";
+        // line 36
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "kontakt\">Kontakt</a>
+                        <li><a href=\"";
+        // line 37
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "korpa\">Korpa</a>
+                        <li><a href=\"";
+        // line 38
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "slatkis/add\">Dodaj</a>
                     </ul>
                 </nav>
             </header>
             <main>
                 ";
-        // line 42
+        // line 43
         $this->displayBlock('main', $context, $blocks);
-        // line 44
+        // line 45
         echo "            </main>
+            <div class=\"cart\">
+                Korpa
+            </div>
             <footer class=\"site-footer\">
                 &copy; 2019 Nenad Krantić
             </footer>
         </div>
+
+        <script>const BASE = '";
+        // line 54
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "';</script>
+        <script src=\"";
+        // line 55
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "assets/js/cart.js\"></script>
     </body>
 </html>";
     }
 
-    // line 13
+    // line 14
     public function block_title($context, array $blocks = [])
     {
         echo " Početna ";
     }
 
-    // line 42
+    // line 43
     public function block_main($context, array $blocks = [])
     {
-        // line 43
+        // line 44
         echo "                ";
     }
 
@@ -109,13 +152,18 @@ class __TwigTemplate_9aacea70a7e2034ec04142999f3097aa96572b8a6f865700ed7fe8f9305
         return "_global/index.html";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  104 => 43,  101 => 42,  95 => 13,  85 => 44,  83 => 42,  51 => 13,  37 => 1,);
+        return array (  147 => 44,  144 => 43,  138 => 14,  131 => 55,  127 => 54,  116 => 45,  114 => 43,  106 => 38,  102 => 37,  98 => 36,  94 => 35,  90 => 34,  75 => 22,  71 => 21,  61 => 14,  54 => 10,  49 => 8,  45 => 7,  37 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "_global/index.html", "D:\\xampp\\htdocs\\views\\_global\\index.html");
+        return new Source("", "_global/index.html", "D:\\xampp\\htdocs\\test\\views\\_global\\index.html");
     }
 }

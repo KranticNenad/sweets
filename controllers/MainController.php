@@ -35,15 +35,47 @@
 
             $this->set('slike', $slike);
 
-            //$this->getSession()->put('test_key', 'test_value ' . rand (100, 999));
+        }
 
-            $staraVrednost1 = $this->getSession()->get('test_key', '/');
-            $this->set('podatak', $staraVrednost1);
+        public function getLogin() {
+            
+        }
 
-            /*$staraVrednost = $this->getSession()->get('brojac', 0);
-            $novaVrednost = $staraVrednost + 1;
-            $this->getSession()->put('brojac', $novaVrednost);
-            $this->set('podatak', $novaVrednost);*/ 
+        public function postLogin() {
+            $username = \filter_input(INPUT_POST, 'login_username', FILTER_SANITIZE_STRING);
+            $password = \filter_input(INPUT_POST, 'login_password', FILTER_SANITIZE_STRING);
+
+            $validPassword = (new \App\Validators\StringValidator())
+                ->setMinLength(8)
+                ->setMaxLength(16)
+                ->isValid($password);
+
+            if (!$validPassword){
+                $this->set('message', 'Došlo je do greške, lozinka nije ispravnog formata.');
+                return;
+            }
+
+            $adminModel = new \App\Models\AdminModel($this->getDatabaseConnection());
+
+            $admin = $adminModel->getByFieldName('username', $username);
+            if (!$admin){
+                $this->set('message', 'Došlo je do greške, ne postoji administrator sa datim korisničkim imenom.');
+                return;
+            }
+
+            $passwordHash = $admin->password_hash;
+
+            if (!password_verify($password, $passwordHash)){
+                sleep(1);
+                $this->set('message', 'Došlo je do greške, uneta lozinka nije ispravna.');
+                return;
+            }
+
+            $this->getSession()->put('username', $username);
+            $this->getSession()->save();
+
+            $this->redirect('/admin/profile');
+
         }
 
     }
