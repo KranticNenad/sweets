@@ -47,7 +47,7 @@
 
         final protected function redirect(string $path, int $code = 307){
             ob_clean();
-            header('Location: ' . $path, true, $code);
+            header('Location: ' . \Configuration::BASE . $path, true, $code);
             exit;
         }
 

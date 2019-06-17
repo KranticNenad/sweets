@@ -1,0 +1,21 @@
+{% extends "_global/index.html" %}
+
+{% block title%}{{slatkis.naziv | title}} - Edit{% endblock %}
+
+{% block main %}
+
+<div>
+    <div>
+        {% for slika in slike %}
+        <img src="{{BASE}}assets/img/{{slatkis.slatkis_id}}/{{slika.naziv}}"
+            alt="slatkis" />
+        {% endfor %}
+    </div>
+    <div>
+        {{slatkis.naziv | escape}}
+    </div>
+    <div>
+        {{slatkis.vrsta | escape}}
+    </div>
+</div>
+{% endblock %}

@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* Main/postLogin.html */
-class __TwigTemplate_5273ec5d83905a62807f9505d065398a889382d1fbab46cd1b200b4b23279f38 extends \Twig\Template
+/* Main/onama.html */
+class __TwigTemplate_6230d1efb2e1c44c4d749e359bd408c25939e7bed3fb5a51d102c881983eb768 extends \Twig\Template
 {
     private $source;
 
@@ -36,7 +36,7 @@ class __TwigTemplate_5273ec5d83905a62807f9505d065398a889382d1fbab46cd1b200b4b232
 
     protected function doDisplay(array $context, array $blocks = [])
     {
-        $this->parent = $this->loadTemplate("_global/index.html", "Main/postLogin.html", 1);
+        $this->parent = $this->loadTemplate("_global/index.html", "Main/onama.html", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -44,23 +44,14 @@ class __TwigTemplate_5273ec5d83905a62807f9505d065398a889382d1fbab46cd1b200b4b232
     public function block_main($context, array $blocks = [])
     {
         // line 4
-        echo "<div>
-    <p>";
-        // line 5
-        echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
-        echo "</p>
-
-    <p>Kliknite <a href=\"";
-        // line 7
-        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "admin/login\">ovde</a> da biste se vratili nazad</p>
-</div>
+        echo "<h1>O Nama</h1>
+<p>Etiam ultricies lobortis tellus ac ornare. Mauris ultrices quam ac odio tincidunt, ut porttitor dui vehicula. Vestibulum efficitur est ipsum, scelerisque pulvinar purus sagittis ac. Ut sed tincidunt ipsum, laoreet iaculis risus. Sed viverra, velit eget ultricies ultricies, neque enim pellentesque odio, vitae malesuada purus elit eu mauris. Sed at urna efficitur, aliquam turpis vitae, pharetra risus. Mauris mattis erat neque, in pulvinar metus venenatis vel. Nullam fermentum varius tortor vitae sollicitudin. Vivamus fermentum feugiat vehicula. Sed et mi vel justo congue consectetur at quis dolor.</p>
 ";
     }
 
     public function getTemplateName()
     {
-        return "Main/postLogin.html";
+        return "Main/onama.html";
     }
 
     public function isTraitable()
@@ -70,11 +61,11 @@ class __TwigTemplate_5273ec5d83905a62807f9505d065398a889382d1fbab46cd1b200b4b232
 
     public function getDebugInfo()
     {
-        return array (  55 => 7,  50 => 5,  47 => 4,  44 => 3,  34 => 1,);
+        return array (  47 => 4,  44 => 3,  34 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "Main/postLogin.html", "D:\\xampp\\htdocs\\slatkisi\\views\\Main\\postLogin.html");
+        return new Source("", "Main/onama.html", "D:\\xampp\\htdocs\\slatkisi\\views\\Main\\onama.html");
     }
 }

@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* Main/postLogin.html */
-class __TwigTemplate_5273ec5d83905a62807f9505d065398a889382d1fbab46cd1b200b4b23279f38 extends \Twig\Template
+/* AdminSlatkisManagement/delete.html */
+class __TwigTemplate_23edb03d9276da56f0d9892153be191c938531dca2678a6420f1d8a854f611e2 extends \Twig\Template
 {
     private $source;
 
@@ -24,6 +24,7 @@ class __TwigTemplate_5273ec5d83905a62807f9505d065398a889382d1fbab46cd1b200b4b232
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
+            'title' => [$this, 'block_title'],
             'main' => [$this, 'block_main'],
         ];
     }
@@ -36,31 +37,30 @@ class __TwigTemplate_5273ec5d83905a62807f9505d065398a889382d1fbab46cd1b200b4b232
 
     protected function doDisplay(array $context, array $blocks = [])
     {
-        $this->parent = $this->loadTemplate("_global/index.html", "Main/postLogin.html", 1);
+        $this->parent = $this->loadTemplate("_global/index.html", "AdminSlatkisManagement/delete.html", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
     // line 3
+    public function block_title($context, array $blocks = [])
+    {
+        echo "Slatkiš - Obrisan";
+    }
+
+    // line 5
     public function block_main($context, array $blocks = [])
     {
-        // line 4
-        echo "<div>
-    <p>";
-        // line 5
-        echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
-        echo "</p>
-
-    <p>Kliknite <a href=\"";
-        // line 7
-        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "admin/login\">ovde</a> da biste se vratili nazad</p>
+        // line 6
+        echo "
+<div>
+    <p>Slatkiš je uspešno obrisan!</p>
 </div>
 ";
     }
 
     public function getTemplateName()
     {
-        return "Main/postLogin.html";
+        return "AdminSlatkisManagement/delete.html";
     }
 
     public function isTraitable()
@@ -70,11 +70,11 @@ class __TwigTemplate_5273ec5d83905a62807f9505d065398a889382d1fbab46cd1b200b4b232
 
     public function getDebugInfo()
     {
-        return array (  55 => 7,  50 => 5,  47 => 4,  44 => 3,  34 => 1,);
+        return array (  54 => 6,  51 => 5,  45 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "Main/postLogin.html", "D:\\xampp\\htdocs\\slatkisi\\views\\Main\\postLogin.html");
+        return new Source("", "AdminSlatkisManagement/delete.html", "D:\\xampp\\htdocs\\slatkisi\\views\\AdminSlatkisManagement\\delete.html");
     }
 }

@@ -36,7 +36,7 @@ function displayItems (items) {
     }
 
     const cartTitle = document.createElement('a');
-    cartTitle.innerHTML = 'korpa:';
+    cartTitle.innerHTML = 'Korpa:';
     cartTitle.href = BASE + 'korpa';
 
     itemsDiv.appendChild(cartTitle);
@@ -48,6 +48,13 @@ function displayItems (items) {
 
         itemsDiv.appendChild(itemLink);
     }
+
+    const cartClear = document.createElement('button');
+    cartClear.innerHTML = 'resetuj korpu';
+    cartClear.type = "button";
+    cartClear.setAttribute("onclick", "clearItems()");
+    itemsDiv.appendChild(cartClear);
+
 }
 
 addEventListener('load', getItems);

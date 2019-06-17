@@ -184,3 +184,12 @@ body{
 .cart > a{
     display: block;
 }
+
+.admin-slatkis > td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.admin-slatkis-image {
+    height: 5em;
+}

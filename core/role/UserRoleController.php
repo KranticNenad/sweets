@@ -8,7 +8,7 @@ class UserRoleController extends Controller{
         $username = $this->getSession()->get('username');
 
         if ($username === NULL){
-            $this->redirect('/admin/login');
+            $this->redirect('admin/login');
         }
     }
 }

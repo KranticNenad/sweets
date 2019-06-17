@@ -101,18 +101,14 @@ class __TwigTemplate_9aacea70a7e2034ec04142999f3097aa96572b8a6f865700ed7fe8f9305
         // line 37
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
         echo "korpa\">Korpa</a>
-                        <li><a href=\"";
-        // line 38
-        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "slatkis/add\">Dodaj</a>
                     </ul>
                 </nav>
             </header>
             <main>
                 ";
-        // line 43
+        // line 42
         $this->displayBlock('main', $context, $blocks);
-        // line 45
+        // line 44
         echo "            </main>
             <div class=\"cart\">
                 Korpa
@@ -123,11 +119,11 @@ class __TwigTemplate_9aacea70a7e2034ec04142999f3097aa96572b8a6f865700ed7fe8f9305
         </div>
 
         <script>const BASE = '";
-        // line 54
+        // line 53
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
         echo "';</script>
         <script src=\"";
-        // line 55
+        // line 54
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
         echo "assets/js/cart.js\"></script>
     </body>
@@ -140,10 +136,10 @@ class __TwigTemplate_9aacea70a7e2034ec04142999f3097aa96572b8a6f865700ed7fe8f9305
         echo " Početna ";
     }
 
-    // line 43
+    // line 42
     public function block_main($context, array $blocks = [])
     {
-        // line 44
+        // line 43
         echo "                ";
     }
 
@@ -159,11 +155,11 @@ class __TwigTemplate_9aacea70a7e2034ec04142999f3097aa96572b8a6f865700ed7fe8f9305
 
     public function getDebugInfo()
     {
-        return array (  147 => 44,  144 => 43,  138 => 14,  131 => 55,  127 => 54,  116 => 45,  114 => 43,  106 => 38,  102 => 37,  98 => 36,  94 => 35,  90 => 34,  75 => 22,  71 => 21,  61 => 14,  54 => 10,  49 => 8,  45 => 7,  37 => 1,);
+        return array (  143 => 43,  140 => 42,  134 => 14,  127 => 54,  123 => 53,  112 => 44,  110 => 42,  102 => 37,  98 => 36,  94 => 35,  90 => 34,  75 => 22,  71 => 21,  61 => 14,  54 => 10,  49 => 8,  45 => 7,  37 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "_global/index.html", "D:\\xampp\\htdocs\\test\\views\\_global\\index.html");
+        return new Source("", "_global/index.html", "D:\\xampp\\htdocs\\slatkisi\\views\\_global\\index.html");
     }
 }

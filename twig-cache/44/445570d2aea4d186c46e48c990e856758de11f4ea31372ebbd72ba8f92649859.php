@@ -44,7 +44,9 @@ class __TwigTemplate_9cfc0b17a46a68d29e6d37743f59ec9b4cb7cf9dca042d6dc68226a044a
     public function block_main($context, array $blocks = [])
     {
         // line 4
-        echo "<form action=\"/admin/login\" method=\"POST\">
+        echo "<form action=\"";
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "admin/login\" method=\"POST\">
     <div>
         <label for=\"input_username\">Username:</label>
         <input type=\"text\" id=\"input_username\" name=\"login_username\" required placeholder=\"Unesite Vaše korisničko ime\">
@@ -79,6 +81,6 @@ class __TwigTemplate_9cfc0b17a46a68d29e6d37743f59ec9b4cb7cf9dca042d6dc68226a044a
 
     public function getSourceContext()
     {
-        return new Source("", "Main/getLogin.html", "D:\\xampp\\htdocs\\views\\Main\\getLogin.html");
+        return new Source("", "Main/getLogin.html", "D:\\xampp\\htdocs\\slatkisi\\views\\Main\\getLogin.html");
     }
 }

@@ -1,0 +1,32 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+<div>
+    <div class="options">
+        <a href="{{BASE}}admin/slatkisi/add">Dodaj novi slatkiš</a>
+    </div>
+
+    <table class="admin-slatkisi table table-hover">
+            {% for slatkis in slatkisi %}
+                <tr class="admin-slatkis">
+                    <td>
+                        {% for slika in slike if (slika.is_primarna and slatkis.slatkis_id == slika.slatkis_id)%}
+                        <img class="admin-slatkis-image" src="{{BASE}}assets/img/{{slatkis.slatkis_id}}/{{slika.naziv}}" alt="{{slatkis.naziv}} slika" />
+                        {% else %}
+                        <img alt="{{slatkis.naziv}} slika"/>
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {{slatkis.naziv | escape | title}}
+                    </td>
+                    <td>
+                        <a href="{{BASE}}admin/slatkisi/edit/{{slatkis.slatkis_id}}">Izmeni</a>
+                    </td>
+                    <td>
+                        <a href="{{BASE}}admin/slatkisi/delete/{{slatkis.slatkis_id}}">Izbriši</a>
+                    </td>
+                </tr>
+            {% endfor %}
+    </table>
+</div>
+{% endblock %}

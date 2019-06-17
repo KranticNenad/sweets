@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* Main/postLogin.html */
-class __TwigTemplate_5273ec5d83905a62807f9505d065398a889382d1fbab46cd1b200b4b23279f38 extends \Twig\Template
+/* Main/kontakt.html */
+class __TwigTemplate_fb1e63b458dc9ad2291400f7ab86618108cd6a47cb07ace8af2be3166b5dfcbf extends \Twig\Template
 {
     private $source;
 
@@ -36,7 +36,7 @@ class __TwigTemplate_5273ec5d83905a62807f9505d065398a889382d1fbab46cd1b200b4b232
 
     protected function doDisplay(array $context, array $blocks = [])
     {
-        $this->parent = $this->loadTemplate("_global/index.html", "Main/postLogin.html", 1);
+        $this->parent = $this->loadTemplate("_global/index.html", "Main/kontakt.html", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -44,23 +44,14 @@ class __TwigTemplate_5273ec5d83905a62807f9505d065398a889382d1fbab46cd1b200b4b232
     public function block_main($context, array $blocks = [])
     {
         // line 4
-        echo "<div>
-    <p>";
-        // line 5
-        echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
-        echo "</p>
-
-    <p>Kliknite <a href=\"";
-        // line 7
-        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "admin/login\">ovde</a> da biste se vratili nazad</p>
-</div>
+        echo "<h1>Kontakt</h1>
+<p>Maecenas mauris tellus, euismod at vulputate ac, ultricies quis eros. Sed vitae posuere lacus. Pellentesque molestie euismod viverra. Sed vitae finibus nisi, nec scelerisque risus. Quisque rutrum, libero sit amet maximus egestas, sapien massa feugiat orci, ut ornare elit velit quis quam. Aliquam mollis vitae ante id porta.</p>
 ";
     }
 
     public function getTemplateName()
     {
-        return "Main/postLogin.html";
+        return "Main/kontakt.html";
     }
 
     public function isTraitable()
@@ -70,11 +61,11 @@ class __TwigTemplate_5273ec5d83905a62807f9505d065398a889382d1fbab46cd1b200b4b232
 
     public function getDebugInfo()
     {
-        return array (  55 => 7,  50 => 5,  47 => 4,  44 => 3,  34 => 1,);
+        return array (  47 => 4,  44 => 3,  34 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "Main/postLogin.html", "D:\\xampp\\htdocs\\slatkisi\\views\\Main\\postLogin.html");
+        return new Source("", "Main/kontakt.html", "D:\\xampp\\htdocs\\slatkisi\\views\\Main\\kontakt.html");
     }
 }

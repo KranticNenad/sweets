@@ -194,17 +194,9 @@ class __TwigTemplate_61473f7c8be69ab71304d159d150d0df4a303ecda48ec6598f685e4291e
         // line 54
         echo "        </div>
         <div>
-            <a href=\"";
+            <a href=\"#\" onclick=\"addItem(";
         // line 56
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["slatkis"] ?? null), "slatkis_id", [], "any", false, false, false, 56), "html", null, true);
-        echo "/edit\">Izmeni</a>
-            <a href=\"";
-        // line 57
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["slatkis"] ?? null), "slatkis_id", [], "any", false, false, false, 57), "html", null, true);
-        echo "/delete\">Izbrisi</a>
-            <a href=\"#\" onclick=\"addItem(";
-        // line 58
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["slatkis"] ?? null), "slatkis_id", [], "any", false, false, false, 58), "html", null, true);
         echo ");\">Dodaj u korpu</a>
         </div>
     </div>
@@ -223,7 +215,7 @@ class __TwigTemplate_61473f7c8be69ab71304d159d150d0df4a303ecda48ec6598f685e4291e
 
     public function getDebugInfo()
     {
-        return array (  207 => 58,  203 => 57,  199 => 56,  195 => 54,  185 => 52,  180 => 51,  175 => 48,  165 => 46,  160 => 45,  155 => 42,  145 => 40,  140 => 39,  131 => 35,  125 => 32,  110 => 19,  88 => 16,  84 => 14,  80 => 12,  77 => 11,  60 => 10,  54 => 6,  51 => 5,  45 => 3,  35 => 1,);
+        return array (  199 => 56,  195 => 54,  185 => 52,  180 => 51,  175 => 48,  165 => 46,  160 => 45,  155 => 42,  145 => 40,  140 => 39,  131 => 35,  125 => 32,  110 => 19,  88 => 16,  84 => 14,  80 => 12,  77 => 11,  60 => 10,  54 => 6,  51 => 5,  45 => 3,  35 => 1,);
     }
 
     public function getSourceContext()

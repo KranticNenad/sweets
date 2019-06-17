@@ -41,6 +41,14 @@
             
         }
 
+        public function onama(){
+
+        }
+
+        public function kontakt(){
+
+        }
+
         public function postLogin() {
             $username = \filter_input(INPUT_POST, 'login_username', FILTER_SANITIZE_STRING);
             $password = \filter_input(INPUT_POST, 'login_password', FILTER_SANITIZE_STRING);
@@ -74,7 +82,7 @@
             $this->getSession()->put('username', $username);
             $this->getSession()->save();
 
-            $this->redirect('/admin/profile');
+            $this->redirect('admin/profile');
 
         }
 
