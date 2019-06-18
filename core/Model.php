@@ -30,7 +30,7 @@
         final public function getById(int $id)
         {
             $tableName = $this->getTableName();
-            $query = "SELECT * FROM " . $tableName . " WHERE " . $tableName . "_id = ?";
+            $query = "SELECT * FROM " . $tableName . " WHERE " . $tableName . "_id = ?;";
             $prep = $this->dbc->getConnection()->prepare($query);
             $res = $prep->execute([$id]);
             $object = NULL;
@@ -56,7 +56,7 @@
                 throw new \Exception("Invalid field name or value for " . $fieldName . " " . $value);
             }
             $tableName = $this->getTableName();
-            $query = "SELECT * FROM " . $tableName . " WHERE " . $fieldName . " = ?";
+            $query = "SELECT * FROM " . $tableName . " WHERE " . $fieldName . " = ?;";
             $prep = $this->dbc->getConnection()->prepare($query);
             $res = $prep->execute([$value]);
             $object = NULL;
@@ -83,7 +83,7 @@
                 throw new \Exception("Invalid field name or value for " . $fieldName . " " . $value);
             }
             $tableName = $this->getTableName();
-            $query = "SELECT * FROM " . $tableName . " WHERE " . $fieldName . " = ?";
+            $query = "SELECT * FROM " . $tableName . " WHERE " . $fieldName . " = ?;";
             $prep = $this->dbc->getConnection()->prepare($query);
             $res = $prep->execute([$value]);
             $objects = [];
@@ -98,7 +98,7 @@
                 throw new \Exception("Invalid field name or value for " . $fieldName . " " . $value);
             }
             $tableName = $this->getTableName();
-            $query = "DELETE FROM " . $tableName . " WHERE " . $fieldName . " = ?";
+            $query = "DELETE FROM " . $tableName . " WHERE " . $fieldName . " = ?;";
             $prep = $this->dbc->getConnection()->prepare($query);
             $prep->execute([$value]);
         }
@@ -164,7 +164,7 @@
         final public function deleteById(int $id)
         {
             $tableName = $this->getTableName();
-            $query = "DELETE FROM " . $tableName . " WHERE " . $tableName . "_id = ?";
+            $query = "DELETE FROM " . $tableName . " WHERE " . $tableName . "_id = ?;";
             $prep = $this->dbc->getConnection()->prepare($query);
             return $prep->execute([$id]);
         }

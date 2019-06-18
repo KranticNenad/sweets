@@ -27,25 +27,25 @@
         </form>
 </div>
 <div class="slatkisi">
-        {% for slatkis in slatkisi %}
-        <div class="slatkis">
-            <a href="#" class="cart-link" onclick="addItem({{slatkis.slatkis_id}});"><i class="fas fa-cart-plus"></i></a>
-            <a href="{{BASE}}slatkis/{{slatkis.slatkis_id}}">
-            <div>
-                {% for slika in slike if (slika.is_primarna and slatkis.slatkis_id == slika.slatkis_id)%}
-                <img class="slatkis-image" src="{{BASE}}assets/img/{{slatkis.slatkis_id}}/{{slika.naziv}}" alt="{{slatkis.naziv}} slika" />
-                {% else %}
-                <img alt="{{slatkis.naziv}} slika"/>
-                {% endfor %}
-            </div>
-            <div>
-                {{slatkis.naziv | escape | title}}
-            </div>
-            <div>
-                {{slatkis.cena | escape }} RSD po {{slatkis.jedinica_mere | escape}}u
-            </div>
-            </a>
+    {% for slatkis in slatkisi %}
+    <div class="slatkis">
+        <a href="#" class="cart-link" onclick="addItem({{slatkis.slatkis_id}});"><i class="fas fa-cart-plus"></i></a>
+        <a href="{{BASE}}slatkis/{{slatkis.slatkis_id}}">
+        <div>
+            {% for slika in slike if (slika.is_primarna and slatkis.slatkis_id == slika.slatkis_id)%}
+            <img class="slatkis-image" src="{{BASE}}assets/img/{{slatkis.slatkis_id}}/{{slika.naziv}}" alt="{{slatkis.naziv}} slika" />
+            {% else %}
+            <img alt="{{slatkis.naziv}} slika"/>
+            {% endfor %}
         </div>
-        {% endfor %}
+        <div>
+            {{slatkis.naziv | escape | title}}
+        </div>
+        <div>
+            {{slatkis.cena | escape }} RSD po {{slatkis.jedinica_mere | escape}}u
+        </div>
+        </a>
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}

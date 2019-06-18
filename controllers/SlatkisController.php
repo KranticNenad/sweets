@@ -45,4 +45,44 @@
             $this->set('slike', $slike);
 
         }
+
+        public function filter (){
+            $slatkisModel = new SlatkisModel($this->getDatabaseConnection());
+
+            $minPrice = filter_input(INPUT_POST, 'min-price');
+            $maxPrice = filter_input(INPUT_POST, 'max-price');
+            $vrsta = filter_input(INPUT_POST, 'vrsta');
+            $boja = filter_input(INPUT_POST, 'boja');
+            $sastojak = filter_input(INPUT_POST, 'sastojak');
+
+            $slatkisi = $slatkisModel->getAllByFilter([
+                'min-price' => $minPrice,
+                'max-price' => $maxPrice,
+                'vrsta_id' => $vrsta,
+                'boja_id' => $boja,
+                'sa.sastojak_id' => $sastojak
+            ]);
+
+            $this->set("slatkisi", $slatkisi);
+            
+            $vrstaModel = new VrstaModel($this->getDatabaseConnection());
+            $vrste = $vrstaModel->getAll();
+
+            $this->set('vrste', $vrste);
+
+            $bojaModel = new BojaModel($this->getDatabaseConnection());
+            $boje = $bojaModel->getAll();
+
+            $this->set('boje', $boje);
+
+            $sastojakModel = new SastojakModel($this->getDatabaseConnection());
+            $sastojci = $sastojakModel->getAll();
+
+            $this->set('sastojci', $sastojci);
+
+            $slikaModel = new SlikaModel($this->getDatabaseConnection());
+            $slike = $slikaModel->getAll();
+
+            $this->set('slike', $slike);
+        }
     }

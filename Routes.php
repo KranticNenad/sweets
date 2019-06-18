@@ -8,6 +8,7 @@
         App\Core\Route::get('|^slatkis/([0-9]+)/?$|', 'Slatkis', 'show'),
         App\Core\Route::get('|^onama/?$|', 'Main', 'onama'),
         App\Core\Route::get('|^kontakt/?$|', 'Main', 'kontakt'),
+        App\Core\Route::post('|^filter/?$|', 'Slatkis', 'filter'),
         
         #API Routes
         App\Core\Route::get('|^api/slatkis/([0-9]+)/?$|', 'ApiSlatkis', 'show'),

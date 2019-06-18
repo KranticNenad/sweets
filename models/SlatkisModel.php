@@ -20,4 +20,39 @@ class SlatkisModel extends Model
             'jedinica_mere' => new Field((new SetValidator())->setItems(['gram', 'komad']))
         ];
     }
+
+    public function getAllByFilter(array $data):array{
+
+        $filterList = [];
+        $values = [];
+        foreach($data as $fieldName => $value){
+            if ($fieldName === "min-price"){
+                $values[] = $value;
+                continue;
+            }
+            if ($fieldName === "max-price"){
+                $values[] = $value;
+                $filterList[] = "cena BETWEEN ? AND ?";
+                continue;
+            }
+            if ($value === "0"){
+                continue;
+            }
+            $values[] = $value;
+            $filterList[] = "{$fieldName} = ?";
+        }
+        $filterString = implode(" AND ", $filterList);
+
+        $query = "SELECT DISTINCT s.slatkis_id, s.naziv, s.cena, s.vrsta_id, s.drzava_id, s.boja_id, s.jedinica_mere FROM slatkis AS s 
+        JOIN sastojak_slatkis ss ON s.slatkis_id = ss.slatkis_id 
+        JOIN sastojak sa ON ss.sastojak_id = sa.sastojak_id 
+        WHERE {$filterString};";
+        $prep = $this->getConnection()->prepare($query);
+        $res = $prep->execute(array_values($values));
+        $objects = [];
+        if ($res) {
+            $objects = $prep->fetchAll(\PDO::FETCH_OBJ);
+        }
+        return $objects;
+    }
 }
