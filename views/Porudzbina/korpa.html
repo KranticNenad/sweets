@@ -1,0 +1,73 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+<h1>Korpa</h1>
+<form class="form-group">
+    <table class="table table-hover">
+        {% for slatkis in slatkisi %}
+            <tr class="admin-slatkis">
+                <td>
+                    {% for slika in slike if (slika.is_primarna and slatkis.slatkis_id == slika.slatkis_id)%}
+                    <img class="admin-slatkis-image" src="{{BASE}}assets/img/{{slatkis.slatkis_id}}/{{slika.naziv}}" alt="{{slatkis.naziv}} slika" />
+                    {% else %}
+                    <img alt="{{slatkis.naziv}} slika"/>
+                    {% endfor %}
+                </td>
+                <td>
+                    {{slatkis.naziv | escape | title}}
+                </td>
+                <td>
+                    <input class="form-control" onkeyup="calculateSum()" onchange="calculateSum()" name="amount[]" type="number" value="1" min="1" step="0.01" max="10000" title="Količina mora biti izmedju 1 i 10000" required/>
+                </td>
+                <td>
+                    {{slatkis.cena | escape }} RSD po {{slatkis.jedinica_mere | escape}}u
+                    <input value="{{slatkis.cena}}" name="price[]" hidden disabled>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <div>
+        Ukupna Cena = <input type="text" name="sum" id="sum" disabled/>
+        <script>
+            function calculateSum(){
+                var amounts = document.getElementsByName("amount[]");
+                var prices = document.getElementsByName("price[]");
+                var sum = 0.0;
+                for (var i=0; i < amounts.length; i++){
+                    sum += parseFloat(amounts[i].value) * parseFloat(prices[i].value);
+                }
+                document.getElementById("sum").value = sum;
+            }
+        </script>
+    </div>
+    <span>Molimo Vas unesite Vaše podatke ispod:</span>
+    <table>
+        <tr>
+            <td>
+                <label for="ime">Ime: </label>
+            </td>
+            <td>
+                <input id="ime" name="ime" minlength="2" maxlength="255" required pattern="|^([a-zA-ZšŠđĐčČćĆžŽ]+ ?[a-zA-ZšŠđĐčČćĆžŽ]+)+$|" title="Ime mora biti izmedju 2 i 255 slova. Ne sme biti prazno"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="prezime">Prezime: </label>
+            </td>
+            <td>
+                <input id="prezime" name="prezime" minlength="2" maxlength="255" required pattern="|^([a-zA-ZšŠđĐčČćĆžŽ]+ ?[a-zA-ZšŠđĐčČćĆžŽ]+)+$|" title="Prezime mora biti izmedju 2 i 255 slova. Ne sme biti prazno"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="adresa">Adresa: </label>
+            </td>
+            <td>
+                <input id="adresa" name="adresa" minlength="2" maxlength="255" required pattern="|^([a-zA-ZšŠđĐčČćĆžŽ]+ ?[a-zA-ZšŠđĐčČćĆžŽ]+)+$|" title="Adresa mora biti izmedju 2 i 255 slova. Ne sme biti prazno"/>
+            </td> 
+        </tr>
+    </table>
+    <button type="submit" class="btn btn-primary">Poruči</button>
+</form>
+
+{% endblock %}

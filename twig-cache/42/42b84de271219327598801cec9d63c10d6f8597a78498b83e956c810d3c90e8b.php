@@ -84,20 +84,20 @@ class __TwigTemplate_9aacea70a7e2034ec04142999f3097aa96572b8a6f865700ed7fe8f9305
                     <a href=\"http://www.youtube.com\" id=\"youtube-icon\"><i class=\"fab fa-youtube\"></i></a>
                 </div>
                 <nav id=\"main-menu\">
-                    <ul>
-                        <li><a href=\"";
+                    <ul class=\"nav\">
+                        <li class=\"nav-item\"><a class=\"nav-link\" href=\"";
         // line 34
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
         echo "\">Početna</a>
-                        <li><a href=\"";
+                        <li class=\"nav-item\"><a class=\"nav-link\" href=\"";
         // line 35
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
         echo "onama\">O nama</a>
-                        <li><a href=\"";
+                        <li class=\"nav-item\"><a class=\"nav-link\" href=\"";
         // line 36
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
         echo "kontakt\">Kontakt</a>
-                        <li><a href=\"";
+                        <li class=\"nav-item\"><a class=\"nav-link\" href=\"";
         // line 37
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
         echo "korpa\">Korpa</a>

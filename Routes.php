@@ -4,11 +4,13 @@
         App\Core\Route::get('|^admin/login/?$|', 'Main', 'getLogin'),
         App\Core\Route::post('|^admin/login/?$|', 'Main', 'postLogin'),
 
-        #Guest Routes
+        #Main Routes
         App\Core\Route::get('|^slatkis/([0-9]+)/?$|', 'Slatkis', 'show'),
         App\Core\Route::get('|^onama/?$|', 'Main', 'onama'),
         App\Core\Route::get('|^kontakt/?$|', 'Main', 'kontakt'),
         App\Core\Route::post('|^filter/?$|', 'Slatkis', 'filter'),
+        App\Core\Route::get('|^korpa/?$|', 'Porudzbina', 'korpa'),
+        App\Core\Route::post('|^korpa/?$|', 'Porudzbina', 'korpaPost'),
         
         #API Routes
         App\Core\Route::get('|^api/slatkis/([0-9]+)/?$|', 'ApiSlatkis', 'show'),

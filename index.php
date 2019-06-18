@@ -69,5 +69,5 @@
 
     $data['BASE'] = Configuration::BASE;
 
-    echo $twig->render($route->getController() .'/'. $route->getMethod() . '.html',$data);
+    echo $twig->render($route->getController() .'/'. $route->getMethod() . '.html', $data);
     

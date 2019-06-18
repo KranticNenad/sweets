@@ -38,4 +38,5 @@
             $this->getSession()->put('items', []);
             $this->set('error', 0);
         }
+        
     }
