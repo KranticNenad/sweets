@@ -85,19 +85,19 @@ class __TwigTemplate_af2e63db95bff0acc1c2543451f134ee132817fbf0974ee21bb128df0c4
                 </div>
                 <nav id=\"main-menu\">
                     <ul class=\"nav\">
-                        <li class=\"nav-item\"><a class=\"nav-link\" href=\"";
+                        <li class=\"nav-item\"><a class=\"nav-link btn\" href=\"";
         // line 34
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
         echo "\">Početna</a>
-                        <li class=\"nav-item\"><a class=\"nav-link\" href=\"";
+                        <li class=\"nav-item\"><a class=\"nav-link btn\" href=\"";
         // line 35
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
         echo "onama\">O nama</a>
-                        <li class=\"nav-item\"><a class=\"nav-link\" href=\"";
+                        <li class=\"nav-item\"><a class=\"nav-link btn\" href=\"";
         // line 36
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
         echo "kontakt\">Kontakt</a>
-                        <li class=\"nav-item\"><a class=\"nav-link\" href=\"";
+                        <li class=\"nav-item\"><a class=\"nav-link btn\" href=\"";
         // line 37
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
         echo "korpa\">Korpa</a>

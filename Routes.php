@@ -26,6 +26,9 @@
         App\Core\Route::post('|^admin/slatkisi/edit/([0-9]+)/?$|', 'AdminSlatkisManagement', 'postEdit'),
         App\Core\Route::get('|^admin/slatkisi/add/?$|', 'AdminSlatkisManagement', 'getAdd'),
         App\Core\Route::post('|^admin/slatkisi/add/?$|', 'AdminSlatkisManagement', 'postAdd'),
+        App\Core\Route::get('|^admin/porudzbine/?$|', 'AdminPorudzbinaManagement', 'porudzbine'),
+        App\Core\Route::get('|^admin/porudzbine/show/([0-9]+)/?$|', 'AdminPorudzbinaManagement', 'show'),
+        App\Core\Route::post('|^admin/porudzbine/show/([0-9]+)/?$|', 'AdminPorudzbinaManagement', 'showPost'),
 
         #Fallback Routes
         App\Core\Route::any('|^.*$|', 'Main', 'home')

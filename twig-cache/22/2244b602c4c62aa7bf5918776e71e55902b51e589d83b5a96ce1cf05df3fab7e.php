@@ -54,6 +54,10 @@ class __TwigTemplate_e80786fec941e5a12df07df1fef3ffe4c5c177e30d501c6cd7349c74097
         echo "
 <div>
     <p>Slatkiš je uspešno obrisan!</p>
+    <a href=\"";
+        // line 9
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "admin/slatkisi\">Nazad</a>
 </div>
 ";
     }
@@ -70,7 +74,7 @@ class __TwigTemplate_e80786fec941e5a12df07df1fef3ffe4c5c177e30d501c6cd7349c74097
 
     public function getDebugInfo()
     {
-        return array (  54 => 6,  51 => 5,  45 => 3,  35 => 1,);
+        return array (  59 => 9,  54 => 6,  51 => 5,  45 => 3,  35 => 1,);
     }
 
     public function getSourceContext()

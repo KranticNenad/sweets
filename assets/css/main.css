@@ -203,3 +203,19 @@ body{
     position: relative;
     float: right;
 }
+
+.admin-porudzbina-header > th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.admin-porudzbina > td{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.slatkis-show{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}

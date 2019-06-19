@@ -1,7 +1,11 @@
 {% extends "_global/index.html" %}
 
+{% block title%}Admin Panel{% endblock %}
+
 {% block main %}
 <div>
-    Dashboard
+    <a href="{{BASE}}admin/slatkisi" class="btn btn-info">index slatkiša</a>
+    <br>
+    <a href="{{BASE}}admin/porudzbine" class="btn btn-info">index porudžbina</a>
 </div>
 {% endblock %}

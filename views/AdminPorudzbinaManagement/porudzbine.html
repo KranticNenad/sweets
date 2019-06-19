@@ -1,0 +1,57 @@
+{% extends "_global/index.html" %}
+
+{% block title%}Porudžbine{% endblock %}
+
+{% block main %}
+<div>
+    <a href="{{BASE}}admin/profile" class="btn btn-info">Nazad</a>
+    <table class="admin-porudzbine table table-hover">
+        <tr class="admin-porudzbina-header">
+            <th>
+                id porudžbine
+            </th>
+            <th>
+                status
+            </th>
+            <th>
+                datum
+            </th>
+            <th>
+                plaćeno
+            </th>
+            <th>
+                id kupca
+            </th>
+            <th>
+                ukupno
+            </th>
+        </tr>
+        {% for porudzbina in porudzbine %}
+            <tr class="admin-porudzbina" onclick="window.location='{{BASE}}admin/porudzbine/show/{{porudzbina.porudzbina_id}}';">
+                <td>
+                    {{porudzbina.porudzbina_id | escape | title}}
+                </td>
+                <td>
+                    {{porudzbina.status | escape | title}}
+                </td>
+                <td>
+                    {{porudzbina.datum | escape}}
+                </td>
+                <td>
+                    {% if porudzbina.is_placeno == 0 %}
+                    Ne
+                    {% else %}
+                    Da
+                    {% endif %}
+                </td>
+                <td>
+                    {{porudzbina.kupac_id | escape | title}}
+                </td>
+                <td>
+                    {{porudzbina.ukupno | escape | title}}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

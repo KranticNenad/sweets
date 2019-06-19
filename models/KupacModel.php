@@ -16,4 +16,15 @@ class KupacModel extends Model
             'adresa'    => new Field(new StringValidator())
         ];
     }
+
+    final public function getLatestId (){
+        $query = "SELECT kupac_id FROM kupac ORDER BY kupac_id DESC LIMIT 0,1;";
+        $prep = $this->getConnection()->prepare($query);
+        $res = $prep->execute();
+        $id = NULL;
+        if ($res) {
+            $id = $prep->fetch(\PDO::FETCH_NUM);
+        }
+        return $id;
+    }
 }

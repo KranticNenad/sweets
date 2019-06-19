@@ -1,9 +1,12 @@
 {% extends "_global/index.html" %}
 
+{% block title%}Slatkiši{% endblock %}
+
 {% block main %}
 <div>
+    <a href="{{BASE}}admin/profile" class="btn btn-info">Nazad</a><br>
     <div class="options">
-        <a href="{{BASE}}admin/slatkisi/add">Dodaj novi slatkiš</a>
+        <a href="{{BASE}}admin/slatkisi/add" class="btn btn-success">Dodaj novi slatkiš</a>
     </div>
 
     <table class="admin-slatkisi table table-hover">
@@ -20,10 +23,10 @@
                         {{slatkis.naziv | escape | title}}
                     </td>
                     <td>
-                        <a href="{{BASE}}admin/slatkisi/edit/{{slatkis.slatkis_id}}">Izmeni</a>
+                        <a href="{{BASE}}admin/slatkisi/edit/{{slatkis.slatkis_id}}" class="btn btn-primary">Izmeni</a>
                     </td>
                     <td>
-                        <a href="{{BASE}}admin/slatkisi/delete/{{slatkis.slatkis_id}}">Izbriši</a>
+                        <a href="{{BASE}}admin/slatkisi/delete/{{slatkis.slatkis_id}}" class="btn btn-danger">Izbriši</a>
                     </td>
                 </tr>
             {% endfor %}

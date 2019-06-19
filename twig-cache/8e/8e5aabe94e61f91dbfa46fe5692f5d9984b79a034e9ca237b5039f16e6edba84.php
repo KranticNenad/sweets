@@ -24,6 +24,7 @@ class __TwigTemplate_4d5d59323ba80382ba1a1a55e31e80210f683a14e9792903ec175849e2b
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
+            'title' => [$this, 'block_title'],
             'main' => [$this, 'block_main'],
         ];
     }
@@ -41,9 +42,15 @@ class __TwigTemplate_4d5d59323ba80382ba1a1a55e31e80210f683a14e9792903ec175849e2b
     }
 
     // line 3
+    public function block_title($context, array $blocks = [])
+    {
+        echo "Kontakt";
+    }
+
+    // line 5
     public function block_main($context, array $blocks = [])
     {
-        // line 4
+        // line 6
         echo "<h1>Kontakt</h1>
 <p>Maecenas mauris tellus, euismod at vulputate ac, ultricies quis eros. Sed vitae posuere lacus. Pellentesque molestie euismod viverra. Sed vitae finibus nisi, nec scelerisque risus. Quisque rutrum, libero sit amet maximus egestas, sapien massa feugiat orci, ut ornare elit velit quis quam. Aliquam mollis vitae ante id porta.</p>
 ";
@@ -61,7 +68,7 @@ class __TwigTemplate_4d5d59323ba80382ba1a1a55e31e80210f683a14e9792903ec175849e2b
 
     public function getDebugInfo()
     {
-        return array (  47 => 4,  44 => 3,  34 => 1,);
+        return array (  54 => 6,  51 => 5,  45 => 3,  35 => 1,);
     }
 
     public function getSourceContext()

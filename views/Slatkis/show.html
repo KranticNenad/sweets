@@ -5,7 +5,7 @@
 {% block main %}
 
     <div class="slatkis-show">
-        <div id="carousel-slatkisi" class="carousel slide" data-ride="carousel">
+        <div id="carousel-slatkisi" class="carousel slide w-50" data-ride="carousel">
             <div class="carousel-inner">
                     {% for slika in slike %}
                     {% if loop.first %}
@@ -28,32 +28,46 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-        <div>
-            Naziv: {{slatkis.naziv | escape}}
-        </div>
-        <div>
-            Cena po {{slatkis.jedinica_mere | escape}}u: {{slatkis.cena | escape}} RSD
-        </div>
-        <div>
-            Vrsta: 
-            {% for vrsta in vrste if (slatkis.vrsta_id == vrsta.vrsta_id) %}
-            {{vrsta.naziv | escape}}
-            {% endfor %}
-        </div>
-        <div>
-            Država: 
-            {% for drzava in drzave if (slatkis.drzava_id == drzava.drzava_id) %}
-            {{drzava.naziv | escape}}
-            {% endfor %}
-        </div>
-        <div>
-            Boja: 
-            {% for boja in boje if (slatkis.boja_id == boja.boja_id) %}
-            {{boja.naziv | escape}}
-            {% endfor %}
-        </div>
-        <div>
-            <a href="#" onclick="addItem({{slatkis.slatkis_id}})"><i class="fas fa-cart-plus"></i> Dodaj u korpu</a>
-        </div>
+        <table class="table w-50">
+            <tr>
+                <td>
+                        Naziv: {{slatkis.naziv | escape}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                        Cena po {{slatkis.jedinica_mere | escape}}u: {{slatkis.cena | escape}} RSD
+                </td>
+            </tr>
+            <tr>
+                <td>
+                        Vrsta: 
+                        {% for vrsta in vrste if (slatkis.vrsta_id == vrsta.vrsta_id) %}
+                        {{vrsta.naziv | escape}}
+                        {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                        Država: 
+                        {% for drzava in drzave if (slatkis.drzava_id == drzava.drzava_id) %}
+                        {{drzava.naziv | escape}}
+                        {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                        Boja: 
+                        {% for boja in boje if (slatkis.boja_id == boja.boja_id) %}
+                        {{boja.naziv | escape}}
+                        {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                        <a href="#" onclick="addItem({{slatkis.slatkis_id}})"><i class="fas fa-cart-plus"></i> Dodaj u korpu</a>
+                </td>
+            </tr>
+        </table>
     </div>
 {% endblock %}

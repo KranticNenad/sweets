@@ -5,51 +5,81 @@
 {% block main %}
 
 <div>
-        <form class="slatkis-form" method="POST">
-            <div>
-                    <label for="naziv">Naziv: </label>
-                    <input type="text" id="naziv" name="naziv" value="" minlength="5" maxlength="50" pattern="|^([a-zA-ZšŠđĐčČćĆžŽ]+ ?[a-zA-ZšŠđĐčČćĆžŽ]+)+$|" required title="Naziv mora da se sastoji samo od slova i belina, minimalne dužine 5, maksimalne dužine 50. Ne sme biti prazan"/>
-            </div>
-            <div>
-                    <label for="cena">Cena: </label>
-                    <input type="text" id="cena" name="cena" value="1" pattern="|^[1-9][0-9]{0,4}(\.[0-9]{1,2})?$|" required title="cena mora da ima 5 brojeva pre decimalne tačke i 2 broja posle, ne sme biti nula"/>
-            </div>
-            <div>
-                    <label for="vrsta_id">Vrsta: </label>
-                    <select name="vrsta_id" id="vrsta_id">
-                            {% for vrsta in vrste%}
-                            <option value="{{vrsta.vrsta_id}}">{{vrsta.naziv | escape}}</option>
-                            {% endfor %}
-                    </select>
-            </div>
-            <div>
-                    <label for="drzava_id">Drzava: </label>
-                    <select name="drzava_id" id="drzava_id">
-                            {% for drzava in drzave%}
-                            <option value="{{drzava.drzava_id}}">{{drzava.naziv | escape}}</option>
-                            {% endfor %}
-                    </select>
-            </div>
-            <div>
-                    <label for="boja_id">Boja: </label>
-                    <select name="boja_id" id="boja_id">
-                            {% for boja in boje%}
-                            <option value="{{boja.boja_id}}">{{boja.naziv | escape}}</option>
-                            {% endfor %}
-                    </select>
-            </div>
-            <div>
-                    <label for="jedinica_mere">Jedinica mere: </label>
-                    <select name="jedinica_mere" id=jedinica_mere>
-                            <option selected value="gram">gram</option>
-                            <option value="komad">komad</option>
-                    </select>
-            </div>
-            <div>
-                <button type="submit">
-                    Dodaj slatkis
+        <a href="{{BASE}}admin/slatkisi" class="btn btn-info">Nazad</a><br>
+        <form class="slatkis-form form-group" method="POST">
+                <table>
+                        <tr>
+                                <td>
+                                        <label for="naziv">Naziv: </label>
+                                </td>
+                                <td>
+                                        <input class="form-control" type="text" id="naziv" name="naziv" value=""
+                                                minlength="5" maxlength="50"
+                                                pattern="|^([a-zA-ZšŠđĐčČćĆžŽ]+ ?[a-zA-ZšŠđĐčČćĆžŽ]+)+$|" required
+                                                title="Naziv mora da se sastoji samo od slova i belina, minimalne dužine 5, maksimalne dužine 50. Ne sme biti prazan" />
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>
+                                        <label for="cena">Cena: </label>
+                                </td>
+                                <td>
+                                        <input class="form-control" type="text" id="cena" name="cena" value="1"
+                                                pattern="|^[1-9][0-9]{0,4}(\.[0-9]{1,2})?$|" required
+                                                title="cena mora da ima 5 brojeva pre decimalne tačke i 2 broja posle, ne sme biti nula" />
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>
+                                        <label for="vrsta_id">Vrsta: </label>
+                                </td>
+                                <td>
+                                        <select class="form-control" name="vrsta_id" id="vrsta_id">
+                                                {% for vrsta in vrste%}
+                                                <option value="{{vrsta.vrsta_id}}">{{vrsta.naziv | escape}}</option>
+                                                {% endfor %}
+                                        </select>
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>
+                                        <label for="drzava_id">Drzava: </label>
+                                </td>
+                                <td>
+                                        <select class="form-control" name="drzava_id" id="drzava_id">
+                                                {% for drzava in drzave%}
+                                                <option value="{{drzava.drzava_id}}">{{drzava.naziv | escape}}</option>
+                                                {% endfor %}
+                                        </select>
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>
+                                        <label for="boja_id">Boja: </label>
+                                </td>
+                                <td>
+                                        <select class="form-control" name="boja_id" id="boja_id">
+                                                {% for boja in boje%}
+                                                <option value="{{boja.boja_id}}">{{boja.naziv | escape}}</option>
+                                                {% endfor %}
+                                        </select>
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>
+                                        <label for="jedinica_mere">Jedinica mere: </label>
+                                </td>
+                                <td>
+                                        <select class="form-control" name="jedinica_mere" id=jedinica_mere>
+                                                <option selected value="gram">gram</option>
+                                                <option value="komad">komad</option>
+                                        </select>
+                                </td>
+                        </tr>
+                </table>
+                <button type="submit" class="btn btn-primary">
+                        Dodaj slatkis
                 </button>
-            </div>
         </form>
 </div>
 {% endblock %}

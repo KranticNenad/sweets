@@ -1,0 +1,115 @@
+{% extends "_global/index.html" %}
+
+{% block title%}Porudžbina {{porudzbina.porudzbina_id | title}}{% endblock %}
+
+{% block main %}
+<a href="{{BASE}}admin/porudzbine" class="btn btn-info">Nazad</a>
+    <table class="table-bordered w-25">
+        <tr>
+            <td colspan="2">
+                <span>Kupac:</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Ime: </span>
+            </td>
+            <td>
+                <span>{{kupac.ime | title}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Prezime: </span>
+            </td>
+            <td>
+                <span>{{kupac.prezime | title}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Adresa: </span>
+            </td>
+            <td>
+                <span>{{kupac.adresa | title}}</span>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <table class="table-bordered w-50">
+        <tr>
+            <td colspan="3">
+                Stavke:
+            </td>
+        </tr>
+        {% for stavka in stavke %}
+        <tr>
+            <td>
+                {% for slatkis in slatkisi%}
+                    {% if stavka.slatkis_id == slatkis.slatkis_id %}
+                        {{slatkis.naziv}}
+                    {% endif %}
+                {% endfor %}
+            </td>
+            <td>
+                {% for slatkis in slatkisi %}
+                    {% if stavka.slatkis_id == slatkis.slatkis_id %}
+                        {{stavka.kolicina}} {{slatkis.jedinica_mere}}(a)
+                    {% endif %}
+                {% endfor %}
+            </td>
+            <td>
+                {{stavka.cena}} RSD
+            </td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td>
+                <span>Ukupno </span>
+            </td>
+            <td colspan="2">
+                <span>{{porudzbina.ukupno}} RSD</span>
+            </td>
+        </tr>
+    </table>
+    
+    <form class="form-group" method="POST">
+        <input name="porudzbina_id" value="{{porudzbina.porudzbina_id}}" hidden/>
+        <table class="table-borderless w-25">
+            <tr>
+                <td>
+                    Status:
+                </td>
+                <td>
+                    <select name="status" class="form-control">
+                        {% set statuses = ['realizovana', 'u obradi', 'odbijena'] %}
+                        {% for status in statuses %}
+                            {% if status == porudzbina.status%}
+                                <option value="{{status}}" selected>{{status}}</option>
+                            {% else %}
+                                <option value="{{status}}">{{status}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Plaćeno:
+                </td>
+                <td>
+                    <select name="is_placeno" class="form-control">
+                        {% if porudzbina.is_placeno == 0 %}
+                            <option value="0" selected>Nije Plaćeno</option>
+                            <option value="1">Plaćeno</option>
+                        {% else %}
+                            <option value="0">Nije Plaćeno</option>
+                            <option value="1" selected>Plaćeno</option>
+                        {% endif %}
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <button type="submit" class="btn btn-primary">Izmeni</button>
+    </form>
+{% endblock %}

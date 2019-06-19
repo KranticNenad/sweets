@@ -5,7 +5,7 @@ use App\Core\Model;
 use App\Core\Field;
 use App\Validators\NumberValidator;
 
-class StavkakModel extends Model
+class StavkaModel extends Model
 {
     protected function getFields (): array{
         return [

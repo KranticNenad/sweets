@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* AdminDashboard/index.html */
-class __TwigTemplate_6c63389f0c4bc175a5d88c041c1f1fb1447d1dddfa4f6be53fcfb82eca70ed38 extends \Twig\Template
+/* Porudzbina/korpaPost.html */
+class __TwigTemplate_e77a299652564b827922118978fd68afe9a64bab162b7fa6e0247111e7c8928b extends \Twig\Template
 {
     private $source;
 
@@ -36,7 +36,7 @@ class __TwigTemplate_6c63389f0c4bc175a5d88c041c1f1fb1447d1dddfa4f6be53fcfb82eca7
 
     protected function doDisplay(array $context, array $blocks = [])
     {
-        $this->parent = $this->loadTemplate("_global/index.html", "AdminDashboard/index.html", 1);
+        $this->parent = $this->loadTemplate("_global/index.html", "Porudzbina/korpaPost.html", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -45,22 +45,14 @@ class __TwigTemplate_6c63389f0c4bc175a5d88c041c1f1fb1447d1dddfa4f6be53fcfb82eca7
     {
         // line 4
         echo "<div>
-    <a href=\"";
-        // line 5
-        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "admin/slatkisi\" class=\"btn btn-info\">index slatkiša</a>
-    <br>
-    <a href=\"";
-        // line 7
-        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "admin/porudzbine\" class=\"btn btn-info\">index porudžbina</a>
+        <p>Porudžbina uspešno poslata!</p>
 </div>
 ";
     }
 
     public function getTemplateName()
     {
-        return "AdminDashboard/index.html";
+        return "Porudzbina/korpaPost.html";
     }
 
     public function isTraitable()
@@ -70,11 +62,11 @@ class __TwigTemplate_6c63389f0c4bc175a5d88c041c1f1fb1447d1dddfa4f6be53fcfb82eca7
 
     public function getDebugInfo()
     {
-        return array (  55 => 7,  50 => 5,  47 => 4,  44 => 3,  34 => 1,);
+        return array (  47 => 4,  44 => 3,  34 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "AdminDashboard/index.html", "C:\\xampp\\htdocs\\slatkisi\\views\\AdminDashboard\\index.html");
+        return new Source("", "Porudzbina/korpaPost.html", "C:\\xampp\\htdocs\\slatkisi\\views\\Porudzbina\\korpaPost.html");
     }
 }
